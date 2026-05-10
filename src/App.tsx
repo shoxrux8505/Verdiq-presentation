@@ -30,6 +30,48 @@ import { translations, Language } from './translations';
 
 // --- Components ---
 
+const Logo = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
+  <div className={`inline-flex items-center justify-center ${className}`}>
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 100 100" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Verdiq Logo"
+    >
+      <defs>
+        <linearGradient id="verdiq-logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+          <stop offset="0%" stopColor="#4ade80" />
+          <stop offset="100%" stopColor="#0ea5e9" />
+        </linearGradient>
+      </defs>
+      {/* The "V" Shape */}
+      <path 
+        d="M20 35 L45 85 L65 48" 
+        stroke="url(#verdiq-logo-gradient)" 
+        strokeWidth="14" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+      />
+      {/* The Leaf Shape */}
+      <path 
+        d="M48 45 C48 25 75 15 85 30 C95 45 75 55 48 45Z" 
+        fill="url(#verdiq-logo-gradient)" 
+      />
+      {/* Leaf shadow/line */}
+      <path 
+        d="M55 42 C65 35 75 35 85 30" 
+        stroke="white" 
+        strokeWidth="1" 
+        strokeOpacity="0.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  </div>
+);
+
 const SettingsBar = ({ 
   language, 
   setLanguage, 
@@ -99,7 +141,7 @@ const NavControls = ({ onPrev, onNext, current, total }: { onPrev: () => void, o
 
 // --- Slides ---
 
-const SlideCover = ({ t }: { t: any }) => (
+const SlideCover = ({ t, common }: { t: any, common: any }) => (
   <div className="flex flex-col items-center justify-center h-full text-center p-12">
     <motion.div 
       initial={{ opacity: 0, scale: 0.9 }}
@@ -107,7 +149,7 @@ const SlideCover = ({ t }: { t: any }) => (
       className="mb-8"
     >
       <div className="relative inline-block">
-        <ShieldCheck className="w-24 h-24 text-verdiq-accent mb-4" strokeWidth={1} />
+        <Logo size={96} className="mb-4" />
         <div className="absolute inset-0 blur-2xl bg-verdiq-accent/20 rounded-full -z-10" />
       </div>
     </motion.div>
@@ -487,6 +529,109 @@ const SlideVision = ({ t, common }: { t: any, common: any }) => (
   </div>
 );
 
+const SlideFinancials = ({ t, common }: { t: any, common: any }) => (
+  <div className="flex flex-col h-full justify-center p-8 md:p-24 overflow-y-auto">
+    <motion.p className="text-verdiq-accent font-mono mb-4 text-sm uppercase tracking-widest">{common.financials}</motion.p>
+    <motion.h2 className="text-5xl font-bold mb-12 text-text">{t.slideFinancials.title}</motion.h2>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <div className="space-y-8">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }} 
+          whileInView={{ opacity: 1, x: 0 }}
+          className="glass-card p-8 border-verdiq-accent/20"
+        >
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="text-2xl font-bold">{t.slideFinancials.opex}</h3>
+            <span className="text-3xl font-black text-verdiq-accent">{t.slideFinancials.opexVal}</span>
+          </div>
+          <div className="space-y-4">
+            <div className="flex gap-4 items-start">
+              <CheckCircle2 size={20} className="text-verdiq-accent shrink-0 mt-1" />
+              <div>
+                <p className="font-bold text-lg">{t.slideFinancials.team}</p>
+                <p className="text-text/50 text-sm">{t.slideFinancials.teamDetail}</p>
+              </div>
+            </div>
+            <div className="flex gap-4 items-start">
+              <CheckCircle2 size={20} className="text-verdiq-accent shrink-0 mt-1" />
+              <div>
+                <p className="font-bold text-lg">{t.slideFinancials.infra}</p>
+                <p className="text-text/50 text-sm">{t.slideFinancials.infraDetail}</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 pt-6 border-t border-border flex justify-between items-center">
+            <span className="text-text/60 uppercase font-mono text-xs">{t.slideFinancials.annual}</span>
+            <span className="text-xl font-bold text-text">{t.slideFinancials.annualVal}</span>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }} 
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
+          className="glass-card p-8 border-verdiq-blue/20"
+        >
+          <h3 className="text-2xl font-bold mb-6">{t.slideFinancials.revenue}</h3>
+          <div className="grid grid-cols-2 gap-4">
+            {t.slideFinancials.revItems.map((item: string, i: number) => (
+              <div key={i} className="flex gap-2 items-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-verdiq-blue" />
+                <span className="text-sm text-text/80">{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="space-y-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }}
+          className="glass-card p-8 bg-verdiq-accent/5 border-verdiq-accent/30"
+        >
+          <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+            <TrendingUp className="text-verdiq-accent" />
+            {t.slideFinancials.arr}
+          </h3>
+          <div className="space-y-12">
+            <div className="relative pt-2">
+              <div className="flex justify-between mb-2">
+                <span className="text-sm font-mono text-text/60 uppercase">{t.slideFinancials.y1}</span>
+                <span className="font-bold text-verdiq-accent">{t.slideFinancials.y1Val}</span>
+              </div>
+              <div className="h-3 bg-text/10 rounded-full overflow-hidden">
+                <motion.div 
+                  initial={{ width: 0 }} 
+                  whileInView={{ width: '15%' }} 
+                  className="h-full bg-verdiq-accent" 
+                />
+              </div>
+            </div>
+            <div className="relative pt-2">
+              <div className="flex justify-between mb-2">
+                <span className="text-sm font-mono text-text/60 uppercase">{t.slideFinancials.y2}</span>
+                <span className="font-extrabold text-verdiq-accent text-2xl">{t.slideFinancials.y2Val}</span>
+              </div>
+              <div className="h-3 bg-text/10 rounded-full overflow-hidden">
+                <motion.div 
+                  initial={{ width: 0 }} 
+                  whileInView={{ width: '100%' }} 
+                  className="h-full bg-gradient-to-r from-verdiq-accent to-verdiq-blue shadow-[0_0_20px_#00ff8866]" 
+                />
+              </div>
+            </div>
+          </div>
+          <p className="mt-8 text-xs text-text/30 font-mono text-center uppercase tracking-tighter">
+            * Estimates based on MVP market penetration and enterprise pipeline
+          </p>
+        </motion.div>
+      </div>
+    </div>
+  </div>
+);
+
 const SlideClosing = ({ t, common }: { t: any, common: any }) => (
   <div className="flex flex-col h-full justify-center p-8 md:p-24 text-center items-center">
     <motion.div 
@@ -495,7 +640,7 @@ const SlideClosing = ({ t, common }: { t: any, common: any }) => (
       transition={{ type: 'spring', damping: 10 }}
       className="mb-12"
     >
-      <ShieldCheck className="w-32 h-32 text-verdiq-accent" strokeWidth={1} />
+      <Logo size={128} className="mb-12" />
     </motion.div>
     
     <motion.h2 initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} className="text-6xl md:text-8xl text-text font-extrabold mb-8">{t.slide10.title}</motion.h2>
@@ -517,13 +662,16 @@ const SlideClosing = ({ t, common }: { t: any, common: any }) => (
       >
         {common.whitepaper}
       </motion.button>
-      <motion.button 
+      <motion.a 
+        href="https://verdiq-com.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover={{ scale: 1.02 }} 
         whileTap={{ scale: 0.98 }}
-        className="px-8 py-5 glass-card border-border text-text text-xl font-bold hover:bg-surface"
+        className="px-8 py-5 glass-card border-border text-text text-xl font-bold hover:bg-surface flex items-center justify-center transition-all"
       >
         {common.demo}
-      </motion.button>
+      </motion.a>
     </div>
     
     <p className="fixed bottom-12 left-12 text-text/20 font-mono text-xs">VERDIQ.AI &copy; {new Date().getFullYear()} &middot; ESG INTELLIGENCE PORTAL v2.0</p>
@@ -562,6 +710,7 @@ export default function App() {
     SlideBusinessModel,
     SlideComparison,
     SlideVision,
+    SlideFinancials,
     SlideClosing
   ];
 
@@ -630,7 +779,7 @@ export default function App() {
       
       <div className="fixed top-8 left-8 flex items-center gap-3">
         <div className="p-2 bg-verdiq-accent/10 border border-verdiq-accent/20 rounded-lg">
-          <ShieldCheck size={18} className="text-verdiq-accent" />
+          <Logo size={20} />
         </div>
         <span className="font-bold text-xl tracking-tight">Verdiq</span>
       </div>

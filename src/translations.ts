@@ -14,6 +14,7 @@ export const translations = {
       howItWorks: "HOW IT WORKS",
       market: "MARKET OPPORTUNITY",
       businessModel: "BUSINESS MODEL",
+      financials: "FINANCIALS",
       compAdvantage: "COMPETITIVE ADVANTAGE",
     },
     slide1: {
@@ -21,6 +22,24 @@ export const translations = {
       subtitle: "AI-powered ESG Intelligence Platform",
       slogan: "“Turning Data Into Trust”",
       line: "Transforming ESG data into real-time investment intelligence"
+    },
+    slideFinancials: {
+      title: "Financial Outlook",
+      opex: "Monthly OpEx",
+      opexVal: "$13K - $25K",
+      team: "The Team (10 specialists)",
+      teamDetail: "CEO, CTO, 2 AI, 2 FE, 2 BE, ESG Legal, Data Analyst",
+      infra: "Infrastructure",
+      infraDetail: "AWS/GCP, Docker, Kubernetes scaling",
+      annual: "Annual Budget",
+      annualVal: "$150K - $250K",
+      revenue: "Revenue Streams (SaaS)",
+      revItems: ["Monthly Subscriptions", "ESG Auto-reporting", "API Integrations", "Enterprise Solutions"],
+      arr: "ARR Forecast",
+      y1: "Year 1 (MVP)",
+      y1Val: "$50K - $150K",
+      y2: "Year 2 (Scaling)",
+      y2Val: "$500K - $2M"
     },
     slide2: {
       title: "ESG reporting is broken, manual, and fragmented.",
@@ -112,6 +131,7 @@ export const translations = {
       howItWorks: "ISH PRINSIPI",
       market: "BOZOR IMKONIYATLARI",
       businessModel: "BIZNES MODEL",
+      financials: "MOLIYA",
       compAdvantage: "RAQOBATUSTUNLIGI",
     },
     slide1: {
@@ -120,12 +140,30 @@ export const translations = {
       slogan: "“Ma'lumotlarni ishonchga aylantirish”",
       line: "ESG ma'lumotlarini real vaqt rejimida investitsiya tahliliga aylantirish"
     },
+    slideFinancials: {
+      title: "Moliyaviy ko'rsatkichlar",
+      opex: "Oylik xarajatlar (OpEx)",
+      opexVal: "$13 000 - $25 000",
+      team: "Jamoa (10 mutaxassis)",
+      teamDetail: "CEO, CTO, 2 AI, 2 FE, 2 BE, ESG Huquqshunos, Tahlilchi",
+      infra: "Infratuzilma",
+      infraDetail: "AWS/GCP, Docker, Kubernetes",
+      annual: "Yillik byudjet",
+      annualVal: "$150 000 - $250 000",
+      revenue: "Daromad manbalari (SaaS)",
+      revItems: ["Oylik obuna", "ESG avto-hisoboti", "API integratsiyasi", "Enterprise yechimlar"],
+      arr: "Daromad prognozi (ARR)",
+      y1: "1-yil (MVP)",
+      y1Val: "$50 000 - $150 000",
+      y2: "2-yil (O'sish)",
+      y2Val: "$500 000 - $2 000 000"
+    },
     slide2: {
       title: "ESG hisoboti eskirgan, qo'lda bajariladigan va parchalanib ketgan.",
       point1: "Ma'lumotlar turli tizimlarda (HR, Moliya, Ta'minot zanjiri) tarqalgan",
       point2: "Standartlar (GRI, SASB, TCFD, ISSB) murakkablikni oshiradi",
       point3: "Hisobotlar sekin, qimmat va investorlar tomonidan ishonilmaydi",
-      insight: "“ESG hisoboti tizim emas — u qo'lda bajariladigan og'ir ishdir.”"
+      insight: "“ESG hisoboti tizim emas — bu qo'lda bajariladigan vaqt sarfidir.”"
     },
     slide3: {
       title: "Verdiq ESGni sun'iy intellektga asoslangan avtomatlashtirilangan tizimga aylantiradi.",
@@ -210,6 +248,7 @@ export const translations = {
       howItWorks: "КАК ЭТО РАБОТАЕТ",
       market: "РЫНОЧНЫЕ ВОЗМОЖНОСТИ",
       businessModel: "БИЗНЕС-МОДЕЛЬ",
+      financials: "ФИНАНСЫ",
       compAdvantage: "КОНКУРЕНТНОЕ ПРЕИМУЩЕСТВО",
     },
     slide1: {
@@ -218,12 +257,30 @@ export const translations = {
       slogan: "“Превращаем данные в доверие”",
       line: "Трансформация данных ESG в инвестиционную аналитику в реальном времени"
     },
+    slideFinancials: {
+      title: "Финансовые показатели",
+      opex: "Ежемесячные расходы (OpEx)",
+      opexVal: "$13 000 - $25 000",
+      team: "Команда (10 специалистов)",
+      teamDetail: "CEO, CTO, 2 AI, 2 FE, 2 BE, ESG Юрист, Аналитик",
+      infra: "Инфраструктура",
+      infraDetail: "AWS/GCP, Docker, Kubernetes",
+      annual: "Годовой бюджет",
+      annualVal: "$150 000 - $250 000",
+      revenue: "Источники дохода (SaaS)",
+      revItems: ["Ежемесячная подписка", "Авто-отчетность ESG", "Интеграция через API", "Enterprise-решения"],
+      arr: "Прогноз выручки (ARR)",
+      y1: "1-й год (MVP)",
+      y1Val: "$50 000 - $150 000",
+      y2: "2-й год (Рост)",
+      y2Val: "$500 000 - $2 000 000"
+    },
     slide2: {
       title: "Отчетность ESG устарела, ведется вручную и фрагментирована.",
       point1: "Данные разбросаны по системам (HR, финансы, цепочки поставок)",
       point2: "Стандарты (GRI, SASB, TCFD, ISSB) создают парализующую сложность",
       point3: "Отчеты готовятся медленно, дорого и не вызывают доверия у инвесторов",
-      insight: "“Отчетность ESG — это не система, а ручное бремя.”"
+      insight: "“Отчетность ESG — это не система, а ручное время.”"
     },
     slide3: {
       title: "Verdiq превращает ESG в автоматизированную систему на базе ИИ.",
