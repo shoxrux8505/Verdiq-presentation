@@ -184,145 +184,157 @@ export const translations = {
       title: "Verdiq — the new standard of trust in business.",
       slogan: "“Turning ESG data into trust for the world”",
       ask: "Seeking Strategic Investment & Partnerships"
+    },
+    whitepaperModal: {
+      title: "Verdiq Whitepaper Overview",
+      intro: "The Verdiq Whitepaper is not just a document, but a strategic instrument:",
+      items: [
+        { title: "Proof of Concept", desc: "Details our ESG nervous system architecture, data cleaning, and mapping to global standards." },
+        { title: "Setting the Standard", desc: "Formalizes Verdiq as the new standard of trust, transitioning from an app to an industrial protocol." },
+        { title: "B2B & Gov Trust", desc: "Provides deep justification for security, transparency, and accuracy required by large corporations and governments." },
+        { title: "Market Education", desc: "Explains the shift from static, manual reports to necessary real-time analytics." },
+        { title: "Investment Tool", desc: "Acts as a Due Diligence base for VCs, showcasing business model depth and technology stack." }
+      ],
+      close: "Close"
     }
   },
   uz: {
     common: {
-      next: "Oldinga",
-      prev: "Orqaga",
-      demo: "Demo band qilish",
-      whitepaper: "Whitepaper olish",
-      vision: "STRATEGIYA",
+      next: "Keyingi",
+      prev: "Oldingi",
+      demo: "Taqdimotga yozilish",
+      whitepaper: "Whitepaperni yuklab olish",
+      vision: "KONSEPSIYA",
       problem: "MUAMMO",
       solution: "YECHIM",
       product: "MAHSULOT EKOTIZIMI",
-      howItWorks: "ISH PRINSIPI",
-      market: "BOZOR IMKONIYATLARI",
-      businessModel: "BIZNES MODEL",
-      financials: "MOLIYA",
-      compAdvantage: "RAQOBATUSTUNLIGI",
+      howItWorks: "ISHLASH MEXANIZMI",
+      market: "BOZOR ISTIQBOLLARI",
+      businessModel: "BIZNES-MODEL",
+      financials: "MOLIYAVIY KO'RSATKICHLAR",
+      compAdvantage: "RAQOBATBARDOSHLIK AFZALLIGI",
     },
     slide1: {
       title: "Verdiq",
-      subtitle: "AI asosidagi ESG intellekt platformasi",
-      slogan: "“Ma'lumotlarni ishonchga aylantirish”",
-      description: "ESG ma'lumotlarini real vaqtda investitsion tahlillarga aylantirish. Bu yangi standart va O'zbekistondagi yangi infratuzilma",
-      line: "ESG ma'lumotlarini real vaqt rejimida investitsiya tahliliga aylantirish"
+      subtitle: "Sun'iy intellektga asoslangan ESG tahlil platformasi",
+      slogan: "“Ma'lumotlarni ishonch kapitaliga aylantiramiz”",
+      description: "ESG ma'lumotlarini real vaqt rejimida investitsion tahlilga aylantirish. Bu korporativ ishonchning yangi standarti hamda O'zbekiston uchun yangi infratuzilmadir.",
+      line: "ESG ma'lumotlarini uzluksiz ravishda investitsion intellektga aylantirish"
     },
     slideFinancials: {
       title: "Moliyaviy ko'rsatkichlar",
       opex: "Oylik xarajatlar (OpEx)",
       opexVal: "$13 000 - $25 000",
-      team: "Jamoa (10 mutaxassis)",
+      team: "Jamoa (10 nafar mutaxassis)",
       teamDetail: "CEO, CTO, 2 AI, 2 FE, 2 BE, ESG Huquqshunos, Tahlilchi",
       infra: "Infratuzilma",
       infraDetail: "AWS/GCP, Docker, Kubernetes",
       annual: "Yillik byudjet",
       annualVal: "$150 000 - $250 000",
       revenue: "Daromad manbalari (SaaS)",
-      revItems: ["Oylik obuna", "ESG avto-hisoboti", "API integratsiyasi", "Enterprise yechimlar"],
+      revItems: ["Oylik obuna", "Avtomatlashtirilgan ESG hisoboti", "API integratsiyalari", "Korporativ yechimlar"],
       arr: "Daromad prognozi (ARR)",
       y1: "1-yil (MVP)",
       y1Val: "$50 000 - $150 000",
-      y2: "2-yil (O'sish)",
+      y2: "2-yil (Kengayish bosqichi)",
       y2Val: "$500 000 - $2 000 000"
     },
     slide2: {
-      title: "ESG hisoboti eskirgan, qo'lda bajariladigan va parchalanib ketgan.",
-      point1: "Ma'lumotlar turli tizimlarda (HR, Moliya, Ta'minot zanjiri) tarqalgan",
-      point2: "Standartlar (GRI, SASB, TCFD, ISSB) murakkablikni oshiradi",
-      point3: "Hisobotlar sekin, qimmat va investorlar tomonidan ishonilmaydi",
-      insight: "“ESG hisoboti tizim emas — bu qo'lda bajariladigan vaqt sarfidir.”"
+      title: "An'anaviy ESG hisobdorligi eskirgan, tarqoq va qo'l mehnati talab qiladi.",
+      point1: "Ma'lumotlar turli xil korporativ tizimlarda (Kadrlar, Moliya, Ta'minot zanjiri) tarqoq holda saqlanadi",
+      point2: "Xalqaro standartlarning (GRI, SASB, TCFD, ISSB) ko'pligi haddan tashqari murakkablikni keltirib chiqaradi",
+      point3: "Hisobotlarni tayyorlash jarayoni sekin hamda qimmat bo'lib, investorlarda yetarlicha ishonch uyg'otmaydi",
+      insight: "“ESG hisobdorligi tizimli jarayon emas, balki byurokratik va qimmat majburiyatdir.”"
     },
     slide3: {
-      title: "Verdiq ESGni sun'iy intellektga asoslangan avtomatlashtirilangan tizimga aylantiradi.",
-      pipeline: "Yagona ESG quvuri",
-      pipelineDetail: "Barcha korporativ tizimlardan avtomatlashtirilgan to'plash.",
-      processing: "AI qayta ishlash",
-      processingDetail: "Global tizimlar bo'yicha real vaqt rejimida xaritalash.",
+      title: "Verdiq ESG yondashuvini sun'iy intellektga asoslangan avtomatlashtirilangan tizimga aylantiradi.",
+      pipeline: "Yagona ESG ma'lumotlar integratsiyasi",
+      pipelineDetail: "Barcha korporativ tizimlardan ma'lumotlarni avtomatik ravishda yig'ish.",
+      processing: "Sun'iy intellekt orqali ishlov berish",
+      processingDetail: "Ma'lumotlarni xalqaro standartlarga real vaqt rejimida muvofiqlashtirish.",
       readiness: "Investorlar tayyorligi",
-      readinessDetail: "Mutlaq ishonchni yaratadigan tezkor, tasdiqlangan hisobotlar."
+      readinessDetail: "Investorlarda mutlaq ishonch uyg'otuvchi tezkor va verifikatsiyadan o'tgan hisobotlar."
     },
     slide4: {
-      title: "ESG operatsion tizimi",
+      title: "ESG Operatsion Tizimi",
       item1: "Intellektual boshqaruv paneli",
-      item1Detail: "E, S va G ko'rsatkichlarining global ko'rinishi.",
-      item2: "AI ballash tizimi",
-      item2Detail: "Har bir ma'lumot kirishi bilan yangilanadigan dinamik reyting.",
-      item3: "Avto-hisobot",
-      item3Detail: "TCFD, GRI yoki SASB hisobotlarini bir tugma bilan eksport qilish.",
-      item4: "Xavf va muvofiqlik",
-      item4Detail: "Normativ o'zgarishlarni real vaqt rejimida monitoring qilish.",
-      item5: "Benzmarking",
-      item5Detail: "Ish faoliyatini soha raqobatchilari bilan solishtiring."
+      item1Detail: "Ekologik, ijtimoiy va boshqaruv (ESG) ko'rsatkichlarining yaxlit tahlili.",
+      item2: "Sun'iy intellekt asosidagi skoring",
+      item2Detail: "Yangi ma'lumot kiritilishi bilan avtomatik yangilanuvchi dinamik baholash tizimi.",
+      item3: "Avtomatlashtirilgan hisobotlar",
+      item3Detail: "TCFD, GRI yoki SASB hisobotlarini bir tugma orqali eksport qilish.",
+      item4: "Xatarlarni boshqarish va komplayens",
+      item4Detail: "Normativ o'zgarishlarni real vaqt rejimida kuzatib borish.",
+      item5: "Qiyosiy tahlil (Benchmarking)",
+      item5Detail: "Kompaniya ko'rsatkichlarini sohadagi raqobatchilar bilan bevosita taqqoslash."
     },
     slide5: {
       title: "Verdiq qanday ishlaydi: Ma'lumotdan intellektga",
       steps: [
         { 
-          title: "1-BOSQICH — DATA COLLECTION", 
-          desc: "Kompaniya ma'lumotlarini yig'ish: anketalar, hujjatlar va ochiq ma'lumotlar.",
-          why: "Xaotik ma'lumotlar strukturaga aylanadi.",
+          title: "1-BOSQICH — MA'LUMOT YIG'ISH", 
+          desc: "Kompaniya ma'lumotlarini to'plash: so'rovnomalar, ichki hujjatlar va ochiq manbalar.",
+          why: "Tarqoq ma'lumotlar tizimlashtiriladi.",
           icon: "database"
         },
         { 
-          title: "2-BOSQICH — NORMALIZATION", 
-          desc: "Tizim ma'lumotlarni tozalaydi va standartlashtiradi (HR, energiya, boshqaruv).",
-          why: "Kompaniyalar bir-biri bilan taqqoslanadi.",
+          title: "2-BOSQICH — NORMALIZATSIYA", 
+          desc: "Tizim ma'lumotlarni tozalaydi va standartlashtiradi (HR siyosati, energiya sarfi, boshqaruv).",
+          why: "Barcha kompaniyalar uchun yagona taqqoslash mezoni yaratiladi.",
           icon: "workflow"
         },
         { 
-          title: "3-BOSQICH — SCORING ENGINE", 
-          desc: "Real vaqtda ESG skorini hisoblash: global standartlar bo'yicha tayyorgarlik.",
-          why: "E, S, G va ma'lumotlar ishonchini baholaydi.",
+          title: "3-BOSQICH — SKORING TIZIMI", 
+          desc: "Real vaqt rejimida ESG reytingini hisoblash: xalqaro standartlarga muvofiqlik darajasi.",
+          why: "E, S, G omillari va ma'lumotlar ishonchliligini baholaydi.",
           icon: "zap"
         },
         { 
-          title: "4-BOSQICH — AI ANALYSIS", 
-          desc: "AI zaif tomonlarni topadi, xavflarni tushuntiradi va tavsiyalar beradi.",
-          example: "Weak governance increases operational risk.",
+          title: "4-BOSQICH — AI TAHLILI", 
+          desc: "AI zaif nuqtalarni aniqlaydi, ehtimoliy xatarlarni sharhlaydi va strategik tavsiyalar beradi.",
+          example: "Masalan: Zaif boshqaruv (Governance) operatsion xatarlarni oshiradi.",
           icon: "cpu"
         },
         { 
-          title: "5-BOSQICH — INVESTMENT READINESS", 
-          desc: "Verdiq ESGni investitsion insightga va tayyorgarlikka aylantiradi.",
-          readiness: "O'rtacha xavf | Yaxshilash talab etiladi",
+          title: "5-BOSQICH — INVESTITSION TAYYORGARLIK", 
+          desc: "Verdiq ESG ma'lumotlarini investitsion tahlilga va kapital jalb qilishga tayyorlaydi.",
+          readiness: "O'rtacha xavf | Boshqaruvni takomillashtirish zarur",
           icon: "shield"
         },
         { 
-          title: "6-BOSQICH — REPORT GENERATION", 
-          desc: "Tayyor hisobotlar, xavflar va harakat rejalarini yaratadi.",
+          title: "6-BOSQICH — HISOBOT GENERATSIYASI", 
+          desc: "Investorlar uchun tayyor hisobotlar, xavf xaritalari va amaliy harakatlar rejasini yaratadi.",
           icon: "fileText"
         },
         { 
-          title: "7-BOSQICH — CONTINUOUS PROGRESS", 
-          desc: "Progressni kuzatadi, tarixni saqlaydi va ballarni yangilab boradi.",
+          title: "7-BOSQICH — DOIMIY PROGRESS", 
+          desc: "Jarayonni doimiy kuzatib boradi, tarixiy dinamikani saqlaydi va reytinglarni real vaqtda yangilaydi.",
           icon: "trendingUp"
         }
       ],
-      logicTitle: "LOGIKA",
-      logic: ["Xom ma'lumotlar", "ESG tahlili", "AI insightlar", "Investitsion tayyor"],
-      problemTitle: "BIZ HAL QILADIGAN MUAMMO",
-      forInvestors: "Investorlarga: Kamroq noaniqlik.",
-      forCompanies: "Kompaniyalarga: Kapitalga aniq yo'l.",
-      onePhrase: "Verdiq xom ma'lumotlarni strukturaviy investitsiya intellektiga aylantiradi."
+      logicTitle: "MANTIQIY KETMA-KETLIK",
+      logic: ["Dastlabki ma'lumotlar", "ESG tahlili", "AI tavsiyalari", "Investitsion tayyorgarlik"],
+      problemTitle: "BIZ HAL ETAYOTGAN ASOSIY MUAMMO",
+      forInvestors: "Investorlar uchun: Noaniqlikning kamayishi.",
+      forCompanies: "Kompaniyalar uchun: Kapital bozoriga shaffof yo'l.",
+      onePhrase: "Verdiq qayta ishlanmagan ma'lumotlarni tizimlashtirilgan investitsion intellektga aylantiradi."
     },
     slideManifesto: {
       title: "Kelajak standartini yaratish",
       manifesto: [
-        "Kelajak iqtisodiyoti faqat foyda ustiga qurilmaydi.",
-        "U ishonch, shaffoflik va intellekt asosida ishlaydi.",
-        "Verdiq ana shu kelajakni belgilaydigan tizimni qurmoqda.",
-        "Biz shunchaki kompaniyalarni tahlil qilayotganimiz yo'q — biz investitsiya uchun jozibador bo'lgan biznesning yangi avlodini shakllantirishga yordam beryapmiz.",
-        "Bozor o'zgarmoqda. ESG global miqyosga chiqmoqda. AI qarorlarni tezlashtirmoqda. Rivojlanayotgan bozorlar yuksalmoqda.",
-        "Bu shunchaki imkoniyat emas. Bu yangi moliyaviy infratuzilmaning boshlanishi.",
-        "Kelajakdagi biznesni baholash standartini yaratishda bizga qo'shiling.",
-        "Verdiq — ma'lumotlarni ishonchga aylantirish."
+        "Kelajak iqtisodiyoti faqatgina moliyaviy foyda ustiga qurilmaydi.",
+        "U ishonch, mutlaq shaffoflik va raqamli intellekt asosida faoliyat yuritadi.",
+        "Verdiq ana shu kelajakni belgilab beruvchi ekotizimni yaratmoqda.",
+        "Biz shunchaki kompaniyalarni tahlil qilmaymiz — biz investitsiya uchun jozibador bo'lgan biznesning yangi avlodini shakllantirishga hissa qo'shamiz.",
+        "Bozor konyunkturasi o'zgarmoqda. ESG global miqyosga ko'tarilmoqda. AI strategik qarorlarni qabul qilishni tezlashtirmoqda.",
+        "Bu shunchaki biznes imkoniyat emas, balki yangi moliyaviy infratuzilmaning debochasidir.",
+        "Kelajakdagi korporativ baholash standartini yaratishda bizga hamroh bo'ling.",
+        "Verdiq — ma'lumotlarni ishonchga aylantiramiz."
       ]
     },
     slideVsGlobal: {
       title: "Verdiq vs Global ESG Platformalar",
-      headers: ["Platforma", "Korp", "Startap/SMB", "AI Tahlili", "To'liq emas", "Hisobotlar", "Tayyor", "Rivoj", "Real-time"],
+      headers: ["Platforma", "Korporatsiyalar", "Kichik va O'rta Biznes", "AI Tahlili", "Ma'lumot tozalash", "ESG Hisobotlar", "Investitsiyaga tayyor", "Rivojlanayotgan bozorlar", "Real vaqt"],
       rows: [
         { name: "MSCI", values: ["✅", "❌", "❌", "❌", "✅", "⚠️", "❌", "❌"] },
         { name: "Sustainalytics", values: ["✅", "❌", "❌", "❌", "✅", "⚠️", "❌", "❌"] },
@@ -333,42 +345,54 @@ export const translations = {
       ]
     },
     slide6: {
-      title: "Global ESG talablari",
-      point1: "Butun dunyo bo'ylab tartibga solish bosimi ortmoqda (EU CSRD, SEC)",
-      point2: "Investorlar kapital ajratish uchun mutlaq ESG shaffofligini talab qilmoqdalar",
-      point3: "Avtomatlashtirilgan barqarorlik texnologiyalariga talabning oshishi",
-      point4: "Banklar va fondlar tekshirilgan ma'lumotlarga muhtoj",
-      cagr: "CAGR o'sish prognozi"
+      title: "Global ESG Mandati",
+      point1: "Xalqaro miqyosda regulyator talablari qat'iylashmoqda (EU CSRD, SEC)",
+      point2: "Investorlar kapital ajratish qarorida mutlaq ESG shaffofligini talab qilmoqda",
+      point3: "Avtomatlashtirilgan barqarorlik (sustainability) texnologiyalariga bo'lgan korporativ talabning keskin o'sishi",
+      point4: "Bank va investitsiya fondlari xatarlarni baholash uchun verifikatsiyadan o'tgan ma'lumotlarga muhtoj",
+      cagr: "Yillik o'rtacha o'sish sur'ati (CAGR) prognozi"
     },
     slide7: {
       title: "Masshtablanuvchi Enterprise SaaS",
       tier1: "Standart",
-      tier1Sub: "Kichik va o'rta biznes uchun",
-      tier2: "Korxona",
+      tier1Sub: "Kichik va O'rta Biznes vakillari uchun",
+      tier2: "Korporativ",
       tier2Sub: "Global korporatsiyalar uchun",
       tier3: "Strategik",
-      tier3Sub: "Banklar va moliya institutlari uchun",
-      pricingNote: "Narxlar ma'lumotlar hajmi va ob'ektlar soniga bog'liq"
+      tier3Sub: "Bank va moliya institutlari uchun",
+      pricingNote: "Tariflash siyosati ma'lumotlar hajmi va faol obyektlar soniga mutanosib ravishda o'zgaradi"
     },
     slide8: {
       title: "Nima uchun Verdiq g'olib?",
-      col1: "Yo'nalish",
+      col1: "Mezon",
       col2: "Verdiq AI",
-      col3: "Konsalting",
-      row1: ["Razvedka qatlami", "Faol AI tahlili", "Qo'lda ko'rib chiqish"],
-      row2: ["Yangilanish chastotasi", "Real vaqtda (Live API)", "Yillik / choraklik"],
-      row3: ["Xarajat samaradorligi", "SaaS (10 baravar arzon)", "Soatbay (Qimmat)"]
+      col3: "An'anaviy konsalting",
+      row1: ["Tahliliy qatlam", "Proaktiv AI tahlili", "Qo'lda bajariladigan ekspertiza"],
+      row2: ["Yangilanish chastotasi", "Real vaqtda (Live API)", "Yillik / Choraklik"],
+      row3: ["Xarajat samaradorligi", "SaaS (10 barobar tejamkor)", "Soatbay to'lov (Yuqori xarajatli)"]
     },
     slide9: {
-      title: "Global ESG infratuzilmasi",
-      item1: "Investorlar ishonchi uchun standart qatlamga aylanish",
-      item2: "Qo'lda ESG konsaltingini AI avtomatizatsiyasi bilan almashtirish",
-      item3: "Global ESG intellektual asab tizimini yaratish"
+      title: "Global ESG Infratuzilmasi",
+      item1: "Investor ishonchi uchun fundamental standartga aylanish",
+      item2: "An'anaviy ESG konsaltingini AI avtomatizatsiyasi orqali transformatsiya qilish",
+      item3: "Global ESG tahliliy neyron tizimini barpo etish"
     },
     slide10: {
-      title: "Verdiq — biznesdagi yangi ishonch standarti.",
-      slogan: "“Dunyo uchun ESG ma'lumotlarini ishonchga aylantirish”",
-      ask: "Strategik investitsiya va hamkorlikni qidirmoqdamiz"
+      title: "Verdiq — biznes muhitidagi yangi ishonch standarti.",
+      slogan: "“Butun dunyo uchun ESG ma'lumotlarini ishonchga aylantiramiz”",
+      ask: "Strategik investitsiya va hamkorlik uchun ochiqmiz"
+    },
+    whitepaperModal: {
+      title: "Verdiq Whitepaper Sharhi",
+      intro: "Verdiq Whitepaper shunchaki axborot hujjati emas, balki muhim funksiyalarni bajaruvchi strategik vositadir:",
+      items: [
+        { title: "Texnik isbot (Proof of Concept)", desc: "ESG asab tizimimiz arxitekturasi, ma'lumotlarni tozalash algoritmlari va xalqaro standartlarga (CSRD, SEC) muvofiqlashtirish jarayonini batafsil yoritadi." },
+        { title: "Standartlarni o'rnatish", desc: "Verdiq'ning oddiy ilovadan 'industrial protokol'ga aylanishini ta'minlovchi yangi ishonch standarti metodologiyasini shakllantiradi." },
+        { title: "B2B va Davlat ishonchi", desc: "Yirik korporatsiyalar va davlat muassasalari tomonidan talab qilinadigan xavfsizlik, shaffoflik va ma'lumotlar aniqligini chuqur asoslab beradi." },
+        { title: "Bozorni o'qitish", desc: "Nima uchun an'anaviy, qo'l mehnati talab qiladigan hisobot usullari eskirganligini va real vaqt tahliliga o'tishning muqarrarligini tushuntiradi." },
+        { title: "Investitsion vosita", desc: "Venchur fondlari uchun Due Diligence (kompleks tekshiruv) bazasi sifatida xizmat qilib, biznes-model va texnologik stekning chuqur tahlilini taqdim etadi." }
+      ],
+      close: "Yopish"
     }
   },
   ru: {
@@ -554,6 +578,18 @@ export const translations = {
       title: "Verdiq — новый стандарт доверия в бизнесе.",
       slogan: "“Превращаем данные ESG в доверие для всего мира”",
       ask: "Ищем стратегические инвестиции и партнерства"
+    },
+    whitepaperModal: {
+      title: "Обзор Whitepaper Verdiq",
+      intro: "Whitepaper Verdiq — это не просто документ, а стратегический инструмент:",
+      items: [
+        { title: "Техническое доказательство", desc: "Детально описывает архитектуру, очистку «грязных» данных и алгоритм сопоставления с международными стандартами (CSRD, SEC)." },
+        { title: "Установление стандарта", desc: "Формально описывает методологию нового стандарта доверия, превращая продукт в «индустриальный протокол»." },
+        { title: "Доверие B2B и госсектора", desc: "Глубокое обоснование безопасности, прозрачности и точности данных для корпораций и госорганов." },
+        { title: "Образование рынка", desc: "Объясняет, почему ручной сбор данных устарел и почему переход на real-time аналитику неизбежен." },
+        { title: "Инвестиционный инструмент", desc: "База для Due Diligence венчурных фондов. Показывает глубину проработки бизнес-модели и технологического стека." }
+      ],
+      close: "Закрыть"
     }
   }
 };

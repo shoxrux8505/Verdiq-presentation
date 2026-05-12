@@ -24,7 +24,8 @@ import {
   Workflow,
   Sun,
   Moon,
-  Type
+  Type,
+  X
 } from 'lucide-react';
 import { translations, Language } from './translations';
 import verdiqLogo from './verdiq-logwo.png';
@@ -773,8 +774,62 @@ const SlideFinancials = ({ t, common }: { t: any, common: any }) => (
   </div>
 );
 
-const SlideClosing = ({ t, common }: { t: any, common: any }) => (
-  <div className="flex flex-col h-full justify-center p-8 md:p-24 text-center items-center overflow-y-auto">
+const WhitepaperModal = ({ onClose, t }: { onClose: () => void, t: any }) => (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-12">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="absolute inset-0 bg-bg/80 backdrop-blur-sm"
+      onClick={onClose}
+    />
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.95, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.95, y: 20 }}
+      className="relative w-full max-w-3xl glass-card border-verdiq-accent/30 overflow-hidden flex flex-col max-h-[90vh]"
+    >
+      <div className="flex items-center justify-between p-6 border-b border-border/50">
+        <h3 className="text-2xl font-bold text-text">{t.whitepaperModal.title}</h3>
+        <button onClick={onClose} className="p-2 text-text/50 hover:text-text hover:bg-surface rounded-xl transition-colors">
+          <X size={24} />
+        </button>
+      </div>
+      
+      <div className="p-6 overflow-y-auto space-y-6">
+        <p className="text-lg text-text/80 leading-relaxed font-light">{t.whitepaperModal.intro}</p>
+        <div className="space-y-4">
+          {t.whitepaperModal.items.map((item: any, i: number) => (
+            <div key={i} className="flex gap-4 p-4 rounded-xl bg-surface/30 border border-border/30 hover:border-verdiq-accent/30 transition-colors group">
+              <div className="w-8 h-8 shrink-0 flex items-center justify-center rounded-lg bg-verdiq-accent/10 text-verdiq-accent font-mono text-sm border border-verdiq-accent/20">
+                {i + 1}
+              </div>
+              <div>
+                <h4 className="font-bold text-lg text-text group-hover:text-verdiq-accent transition-colors mb-1">{item.title}</h4>
+                <p className="text-text/60 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div className="p-6 border-t border-border/50 bg-surface/50 flex justify-end">
+        <button 
+          onClick={onClose}
+          className="px-6 py-2.5 rounded-xl border border-border hover:bg-surface text-text transition-colors font-medium"
+        >
+          {t.whitepaperModal.close}
+        </button>
+      </div>
+    </motion.div>
+  </div>
+);
+
+const SlideClosing = ({ t, common }: { t: any, common: any }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col h-full justify-center p-8 md:p-24 text-center items-center overflow-y-auto relative">
     <motion.div 
       initial={{ rotate: -180, opacity: 0 }}
       whileInView={{ rotate: 0, opacity: 1 }}
@@ -799,6 +854,7 @@ const SlideClosing = ({ t, common }: { t: any, common: any }) => (
       <motion.button 
         whileHover={{ scale: 1.02 }} 
         whileTap={{ scale: 0.98 }}
+        onClick={() => setIsModalOpen(true)}
         className="px-6 py-4 md:px-8 md:py-5 bg-verdiq-accent text-black font-bold text-lg md:text-xl rounded-2xl shadow-[0_0_30px_#00ff8844] transition-shadow uppercase tracking-wide"
       >
         {common.whitepaper}
@@ -816,8 +872,13 @@ const SlideClosing = ({ t, common }: { t: any, common: any }) => (
     </div>
     
     <p className="fixed bottom-12 left-12 text-text/20 font-mono text-xs">VERDIQ.AI &copy; {new Date().getFullYear()} &middot; ESG INTELLIGENCE PORTAL v2.0</p>
+    
+    <AnimatePresence>
+      {isModalOpen && <WhitepaperModal onClose={() => setIsModalOpen(false)} t={t} />}
+    </AnimatePresence>
   </div>
-);
+  );
+};
 
 // --- Background Effects ---
 
