@@ -122,6 +122,19 @@ export const translations = {
       forCompanies: "Companies: Clear path to capital.",
       onePhrase: "Verdiq transforms raw data into structured investment intelligence."
     },
+    slideManifesto: {
+      title: "Building the Future Standard",
+      manifesto: [
+        "The future economy will not run on profit alone.",
+        "It will run on trust, transparency, and intelligence.",
+        "Verdiq is building the system that defines that future.",
+        "We are not just analyzing companies — we are helping shape the next generation of investable businesses.",
+        "The market is changing. ESG is becoming global. AI is accelerating decisions. Emerging markets are rising.",
+        "This is not just an opportunity. This is the beginning of a new financial infrastructure.",
+        "Join us in building the future standard of business evaluation.",
+        "Verdiq — turning data into trust."
+      ]
+    },
     slideVsGlobal: {
       title: "Verdiq vs Global ESG Platforms",
       headers: ["Platform", "Corp", "SMB", "AI", "Dirty Data", "Reports", "Ready", "Emerging", "Real-time"],
@@ -168,7 +181,7 @@ export const translations = {
       item3: "Build the global ESG intelligence nervous system"
     },
     slide10: {
-      title: "Let's build trust.",
+      title: "Verdiq — the new standard of trust in business.",
       slogan: "“Turning ESG data into trust for the world”",
       ask: "Seeking Strategic Investment & Partnerships"
     }
@@ -294,6 +307,19 @@ export const translations = {
       forCompanies: "Kompaniyalarga: Kapitalga aniq yo'l.",
       onePhrase: "Verdiq xom ma'lumotlarni strukturaviy investitsiya intellektiga aylantiradi."
     },
+    slideManifesto: {
+      title: "Kelajak standartini yaratish",
+      manifesto: [
+        "Kelajak iqtisodiyoti faqat foyda ustiga qurilmaydi.",
+        "U ishonch, shaffoflik va intellekt asosida ishlaydi.",
+        "Verdiq ana shu kelajakni belgilaydigan tizimni qurmoqda.",
+        "Biz shunchaki kompaniyalarni tahlil qilayotganimiz yo'q — biz investitsiya uchun jozibador bo'lgan biznesning yangi avlodini shakllantirishga yordam beryapmiz.",
+        "Bozor o'zgarmoqda. ESG global miqyosga chiqmoqda. AI qarorlarni tezlashtirmoqda. Rivojlanayotgan bozorlar yuksalmoqda.",
+        "Bu shunchaki imkoniyat emas. Bu yangi moliyaviy infratuzilmaning boshlanishi.",
+        "Kelajakdagi biznesni baholash standartini yaratishda bizga qo'shiling.",
+        "Verdiq — ma'lumotlarni ishonchga aylantirish."
+      ]
+    },
     slideVsGlobal: {
       title: "Verdiq vs Global ESG Platformalar",
       headers: ["Platforma", "Korp", "Startap/SMB", "AI Tahlili", "To'liq emas", "Hisobotlar", "Tayyor", "Rivoj", "Real-time"],
@@ -340,7 +366,7 @@ export const translations = {
       item3: "Global ESG intellektual asab tizimini yaratish"
     },
     slide10: {
-      title: "Keling, ishonch o'rnatamiz.",
+      title: "Verdiq — biznesdagi yangi ishonch standarti.",
       slogan: "“Dunyo uchun ESG ma'lumotlarini ishonchga aylantirish”",
       ask: "Strategik investitsiya va hamkorlikni qidirmoqdamiz"
     }
@@ -466,6 +492,19 @@ export const translations = {
       forCompanies: "Компаниям: Путь к капиталу.",
       onePhrase: "Verdiq превращает сырые данные в инвестиционный интеллект."
     },
+    slideManifesto: {
+      title: "Создавая стандарт будущего",
+      manifesto: [
+        "Экономика будущего не будет держаться на одной лишь прибыли.",
+        "Она будет основана на доверии, прозрачности и интеллекте.",
+        "Verdiq строит систему, которая определит это будущее.",
+        "Мы не просто анализируем компании — мы помогаем формировать следующее поколение инвестиционно привлекательного бизнеса.",
+        "Рынок меняется. ESG становится глобальным. ИИ ускоряет решения. Развивающиеся рынки растут.",
+        "Это не просто возможность. Это начало новой финансовой инфраструктуры.",
+        "Присоединяйтесь к нам в создании стандарта оценки бизнеса будущего.",
+        "Verdiq — превращаем данные в доверие."
+      ]
+    },
     slideVsGlobal: {
       title: "Verdiq vs Global ESG Platforms",
       headers: ["Платформа", "Корп", "Стартап/МСБ", "ИИ Анализ", "Грязные данные", "ESG Отчеты", "Готовность", "Рынки", "Real-time"],
@@ -512,7 +551,7 @@ export const translations = {
       item3: "Создать глобальную нервную систему интеллекта ESG"
     },
     slide10: {
-      title: "Давайте строить доверие.",
+      title: "Verdiq — новый стандарт доверия в бизнесе.",
       slogan: "“Превращаем данные ESG в доверие для всего мира”",
       ask: "Ищем стратегические инвестиции и партнерства"
     }

@@ -156,7 +156,7 @@ const SlideCover = ({ t, common }: { t: any, common: any }) => (
     <motion.h1 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="text-7xl md:text-9xl font-extrabold tracking-tighter mb-4 glow-text bg-gradient-to-br from-text to-text/60 bg-clip-text text-transparent"
+      className="text-6xl md:text-8xl font-extrabold tracking-tighter mb-4 glow-text bg-gradient-to-br from-text to-text/60 bg-clip-text text-transparent"
     >
       {t.slide1.title}
     </motion.h1>
@@ -164,7 +164,7 @@ const SlideCover = ({ t, common }: { t: any, common: any }) => (
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.2 }}
-      className="text-verdiq-accent font-mono tracking-[0.2em] uppercase text-sm md:text-lg mb-8"
+      className="text-verdiq-accent font-mono tracking-[0.2em] uppercase text-xs md:text-md mb-6"
     >
       {t.slide1.subtitle}
     </motion.p>
@@ -172,17 +172,17 @@ const SlideCover = ({ t, common }: { t: any, common: any }) => (
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.4 }}
-      className="max-w-3xl px-8 py-8 glass-card border-verdiq-accent/20"
+      className="max-w-3xl px-6 py-6 glass-card border-verdiq-accent/20"
     >
-      <p className="text-text/60 text-xl md:text-2xl italic mb-6">{t.slide1.slogan}</p>
+      <p className="text-text/60 text-lg md:text-xl italic mb-4">{t.slide1.slogan}</p>
       
-      <p className="text-lg md:text-xl text-text/90 font-medium leading-relaxed mb-6">
+      <p className="text-md md:text-lg text-text/90 font-medium leading-relaxed mb-4">
         {t.slide1.description}
       </p>
       
-      <div className="w-16 h-px bg-verdiq-accent/30 mx-auto mb-4" />
+      <div className="w-12 h-px bg-verdiq-accent/30 mx-auto mb-3" />
       
-      <p className="text-text/40 font-mono text-[10px] uppercase tracking-[0.3em]">{t.slide1.line}</p>
+      <p className="text-text/40 font-mono text-[9px] uppercase tracking-[0.3em]">{t.slide1.line}</p>
     </motion.div>
   </div>
 );
@@ -193,28 +193,28 @@ const SlideProblem = ({ t, common }: { t: any, common: any }) => (
       <motion.p 
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        className="text-verdiq-accent font-mono mb-4 text-sm"
+        className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest"
       >
         02. {common.problem}
       </motion.p>
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="text-5xl font-bold mb-8 leading-tight tracking-tight"
+        className="text-4xl md:text-5xl font-bold mb-6 leading-tight tracking-tight"
       >
         {t.slide2.title}
       </motion.h2>
-      <div className="space-y-6">
+      <div className="space-y-4">
         {[t.slide2.point1, t.slide2.point2, t.slide2.point3].map((item, i) => (
           <motion.div 
             key={i}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="flex items-start gap-4"
+            className="flex items-start gap-3"
           >
-            <AlertCircle className="shrink-0 text-red-500 mt-1" size={20} />
-            <p className="text-text/70 text-xl font-light">{item}</p>
+            <AlertCircle className="shrink-0 text-red-500 mt-1" size={18} />
+            <p className="text-text/70 text-lg font-light leading-relaxed">{item}</p>
           </motion.div>
         ))}
       </div>
@@ -223,11 +223,11 @@ const SlideProblem = ({ t, common }: { t: any, common: any }) => (
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        className="glass-card p-8 border-red-500/10"
+        className="glass-card p-6 md:p-8 border-red-500/10"
       >
-        <div className="text-center py-12">
-          <p className="text-text/40 font-mono text-sm mb-4 uppercase">The Core Obstacle</p>
-          <blockquote className="text-3xl font-medium text-text italic">
+        <div className="text-center py-8">
+          <p className="text-text/40 font-mono text-[10px] mb-4 uppercase tracking-widest">The Core Obstacle</p>
+          <blockquote className="text-2xl md:text-3xl font-medium text-text italic leading-snug">
             {t.slide2.insight}
           </blockquote>
         </div>
@@ -243,23 +243,23 @@ const SlideProblem = ({ t, common }: { t: any, common: any }) => (
 );
 
 const SlideSolution = ({ t, common }: { t: any, common: any }) => (
-  <div className="flex flex-col h-full justify-center p-8 md:p-24">
+  <div className="flex flex-col h-full justify-center p-8 md:p-24 overflow-y-auto">
     <motion.p 
       initial={{ opacity: 0, y: -10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="text-verdiq-accent font-mono mb-4 text-sm"
+      className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest leading-none"
     >
       03. {common.solution}
     </motion.p>
     <motion.h2 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="text-5xl font-bold mb-12 max-w-4xl tracking-tight"
+      className="text-4xl md:text-5xl font-bold mb-10 max-w-4xl tracking-tight leading-tight"
     >
       {t.slide3.title}
     </motion.h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {[
         { icon: Database, title: t.slide3.pipeline, desc: t.slide3.pipelineDetail },
         { icon: Cpu, title: t.slide3.processing, desc: t.slide3.processingDetail },
@@ -270,11 +270,11 @@ const SlideSolution = ({ t, common }: { t: any, common: any }) => (
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.1 }}
-          className="glass-card p-8 border-verdiq-accent/10 hover:border-verdiq-accent/30 transition-colors group"
+          className="glass-card p-6 md:p-8 border-verdiq-accent/10 hover:border-verdiq-accent/30 transition-colors group h-full flex flex-col"
         >
-          <item.icon className="text-verdiq-accent mb-6" size={32} />
-          <h3 className="text-2xl font-bold mb-2 group-hover:text-verdiq-accent transition-colors">{item.title}</h3>
-          <p className="text-text/50 text-lg leading-relaxed">{item.desc}</p>
+          <item.icon className="text-verdiq-accent mb-4 md:mb-6" size={28} />
+          <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-verdiq-accent transition-colors leading-tight">{item.title}</h3>
+          <p className="text-text/50 text-base md:text-lg leading-relaxed">{item.desc}</p>
         </motion.div>
       ))}
     </div>
@@ -293,11 +293,11 @@ const SlideSolution = ({ t, common }: { t: any, common: any }) => (
 
 const SlideProduct = ({ t, common }: { t: any, common: any }) => (
   <div className="flex flex-col h-full justify-center p-8 md:p-24">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <motion.p className="text-verdiq-accent font-mono mb-4 text-sm uppercase">04. {common.product}</motion.p>
-        <motion.h2 className="text-5xl font-bold mb-8">{t.slide4.title}</motion.h2>
-        <ul className="space-y-6">
+        <motion.p className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest leading-none">04. {common.product}</motion.p>
+        <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">{t.slide4.title}</motion.h2>
+        <ul className="space-y-4">
           {[
             { icon: BarChart3, title: t.slide4.item1, text: t.slide4.item1Detail },
             { icon: Zap, title: t.slide4.item2, text: t.slide4.item2Detail },
@@ -310,14 +310,14 @@ const SlideProduct = ({ t, common }: { t: any, common: any }) => (
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="flex items-center gap-6 group"
+              className="flex items-center gap-4 group"
             >
-              <div className="p-3 rounded-xl bg-verdiq-accent/5 border border-verdiq-accent/10 group-hover:bg-verdiq-accent/10 transition-colors">
-                <item.icon className="text-verdiq-accent" size={24} />
+              <div className="p-2.5 rounded-xl bg-verdiq-accent/5 border border-verdiq-accent/10 group-hover:bg-verdiq-accent/10 transition-colors shrink-0">
+                <item.icon className="text-verdiq-accent" size={20} />
               </div>
               <div>
-                <h4 className="font-bold text-xl">{item.title}</h4>
-                <p className="text-text/40">{item.text}</p>
+                <h4 className="font-bold text-lg leading-snug">{item.title}</h4>
+                <p className="text-text/40 text-xs">{item.text}</p>
               </div>
             </motion.li>
           ))}
@@ -365,15 +365,15 @@ const SlideHowItWorks = ({ t, common }: { t: any, common: any }) => {
   };
 
   return (
-    <div className="flex flex-col h-full justify-center p-6 md:p-16 overflow-y-auto">
-      <motion.p className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest">
+    <div className="flex flex-col h-full justify-center p-6 md:p-16 lg:p-24 overflow-y-auto">
+      <motion.p className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest leading-none">
         05. {common.howItWorks}
       </motion.p>
-      <motion.h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">
+      <motion.h2 className="text-4xl md:text-5xl font-bold mb-8 md:mb-10 tracking-tight leading-tight">
         {t.slide5.title}
       </motion.h2>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
         {t.slide5.steps.map((step: any, i: number) => {
           const Icon = iconMap[step.icon] || Database;
           return (
@@ -382,7 +382,7 @@ const SlideHowItWorks = ({ t, common }: { t: any, common: any }) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
-              className={`glass-card p-4 border-verdiq-accent/10 hover:border-verdiq-accent/40 transition-all ${i === 6 ? 'lg:col-span-2' : ''}`}
+              className={`glass-card p-4 md:p-5 border-verdiq-accent/10 hover:border-verdiq-accent/40 transition-all flex flex-col h-full ${i === 6 ? 'lg:col-span-2' : ''}`}
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="p-2 bg-verdiq-accent/10 border border-verdiq-accent/20 rounded-lg">
@@ -449,42 +449,42 @@ const SlideHowItWorks = ({ t, common }: { t: any, common: any }) => {
 };
 
 const SlideMarket = ({ t, common }: { t: any, common: any }) => (
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 h-full items-center p-8 md:p-24">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full items-center p-8 md:p-24 overflow-y-auto">
     <div>
-      <motion.p className="text-verdiq-accent font-mono mb-4 text-sm uppercase tracking-widest">{common.market}</motion.p>
-      <motion.h2 className="text-5xl font-bold mb-8">{t.slide6.title}</motion.h2>
-      <div className="space-y-8">
+      <motion.p className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest leading-none">06. {common.market}</motion.p>
+      <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">{t.slide6.title}</motion.h2>
+      <div className="space-y-4 md:space-y-6">
         {[t.slide6.point1, t.slide6.point2, t.slide6.point3, t.slide6.point4].map((item, i) => (
           <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.1 }} className="flex gap-4">
-            <CheckCircle2 size={24} className="text-verdiq-accent shrink-0" />
-            <p className="text-2xl font-light text-text/80">{item}</p>
+            <CheckCircle2 size={24} className="text-verdiq-accent shrink-0 mt-0.5" />
+            <p className="text-xl md:text-2xl font-light text-text/80 leading-snug">{item}</p>
           </motion.div>
         ))}
       </div>
     </div>
-    <div className="bg-surface/30 p-12 rounded-[40px] border border-border relative overflow-hidden">
-      <div className="absolute top-0 right-0 p-8">
-        <Globe size={120} strokeWidth={0.5} className="text-verdiq-accent/10" />
+    <div className="bg-surface/30 p-8 md:p-12 rounded-3xl border border-border relative overflow-hidden">
+      <div className="absolute top-0 right-0 p-6">
+        <Globe size={100} strokeWidth={0.5} className="text-verdiq-accent/10" />
       </div>
-      <p className="text-8xl font-black mb-4 tracking-tighter text-verdiq-accent">12.5%</p>
-      <p className="text-xl font-medium text-text/60 mb-12 uppercase tracking-widest">{t.slide6.cagr}</p>
-      <div className="flex items-end gap-2 h-32">
+      <p className="text-7xl md:text-8xl font-black mb-2 tracking-tighter text-verdiq-accent leading-none">12.5%</p>
+      <p className="text-lg md:text-xl font-medium text-text/60 mb-8 uppercase tracking-widest leading-none">{t.slide6.cagr}</p>
+      <div className="flex items-end gap-2 h-24 md:h-32">
         <div className="flex-1 bg-text/5 h-1/4 rounded-t-lg" />
         <div className="flex-1 bg-text/10 h-2/4 rounded-t-lg" />
         <div className="flex-1 bg-text/20 h-3/4 rounded-t-lg" />
-        <div className="flex-1 bg-verdiq-accent h-full shadow-[0_0_40px_#00ff8844] rounded-t-lg" />
+        <div className="flex-1 bg-verdiq-accent h-full shadow-[0_0_30px_#00ff8844] rounded-t-lg" />
       </div>
-      <p className="mt-4 font-mono text-xs text-text/20 uppercase tracking-widest">ESG Data & Software Market 2024-2030</p>
+      <p className="mt-4 font-mono text-[10px] text-text/20 uppercase tracking-widest text-center">ESG Data & Software Market 2024-2030</p>
     </div>
   </div>
 );
 
 const SlideBusinessModel = ({ t, common }: { t: any, common: any }) => (
-  <div className="flex flex-col h-full justify-center p-8 md:p-24 text-center">
-    <motion.p className="text-verdiq-accent font-mono mb-4 text-sm tracking-widest uppercase">{common.businessModel}</motion.p>
-    <motion.h2 className="text-5xl font-bold mb-16 underline decoration-verdiq-accent underline-offset-8">{t.slide7.title}</motion.h2>
+  <div className="flex flex-col h-full justify-center p-8 md:p-24 text-center overflow-y-auto">
+    <motion.p className="text-verdiq-accent font-mono mb-2 text-xs tracking-widest uppercase leading-none">{common.businessModel}</motion.p>
+    <motion.h2 className="text-4xl md:text-5xl font-bold mb-10 tracking-tight leading-tight">{t.slide7.title}</motion.h2>
     
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {[
         { title: t.slide7.tier1, sub: t.slide7.tier1Sub, feature: "Compliance Baseline", price: "Tier 1" },
         { title: t.slide7.tier2, sub: t.slide7.tier2Sub, feature: t.slide3.pipeline, price: "Tier 2", highlight: true },
@@ -495,93 +495,94 @@ const SlideBusinessModel = ({ t, common }: { t: any, common: any }) => (
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.1 }}
-          className={`glass-card p-12 transition-all group hover:-translate-y-4 ${card.highlight ? 'border-verdiq-accent bg-verdiq-accent/5' : 'hover:border-border'}`}
+          className={`glass-card p-8 md:p-10 transition-all group hover:-translate-y-2 ${card.highlight ? 'border-verdiq-accent bg-verdiq-accent/5' : 'hover:border-border'}`}
         >
-          <p className="text-text/40 font-mono text-xs mb-4 uppercase">{card.sub}</p>
-          <h3 className="text-3xl font-bold mb-6">{card.title}</h3>
-          <div className="h-px bg-border mb-8" />
-          <ul className="text-text/60 mb-12 space-y-4">
+          <p className="text-text/40 font-mono text-[10px] mb-3 uppercase tracking-widest">{card.sub}</p>
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">{card.title}</h3>
+          <div className="h-px bg-border/20 mb-6" />
+          <ul className="text-text/60 mb-8 space-y-3 text-sm md:text-base">
             <li>{card.feature}</li>
             <li>Regulatory Mapping</li>
             <li>Data Connectors</li>
           </ul>
-          <p className="text-sm font-mono text-verdiq-accent uppercase group-hover:tracking-[0.2em] transition-all">Subscription Based</p>
+          <p className="text-[11px] font-mono text-verdiq-accent uppercase group-hover:tracking-[0.1em] transition-all">Subscription Based</p>
         </motion.div>
       ))}
     </div>
-    <p className="mt-16 text-text/30 font-mono text-sm uppercase">{t.slide7.pricingNote}</p>
+    <p className="mt-10 text-text/20 font-mono text-[10px] uppercase tracking-widest">{t.slide7.pricingNote}</p>
   </div>
 );
 
 const SlideComparison = ({ t, common }: { t: any, common: any }) => (
-  <div className="flex flex-col h-full justify-center p-8 md:p-24">
-    <motion.p className="text-verdiq-accent font-mono mb-4 text-sm uppercase tracking-widest">{common.compAdvantage}</motion.p>
-    <motion.h2 className="text-5xl font-bold mb-12 text-text">{t.slide8.title}</motion.h2>
+  <div className="flex flex-col h-full justify-center p-8 md:p-24 overflow-y-auto">
+    <motion.p className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest leading-none">{common.compAdvantage}</motion.p>
+    <motion.h2 className="text-4xl md:text-5xl font-bold mb-10 tracking-tight leading-tight">{t.slide8.title}</motion.h2>
     
-    <div className="overflow-hidden glass-card">
-      <table className="w-full text-left border-collapse">
-        <thead>
-          <tr className="border-b border-border">
-            <th className="p-8 text-text/40 font-mono text-sm uppercase">{t.slide8.col1}</th>
-            <th className="p-8 text-verdiq-accent font-bold text-xl uppercase tracking-widest">{t.slide8.col2}</th>
-            <th className="p-8 text-text/20 font-bold text-xl">{t.slide8.col3}</th>
-            <th className="p-8 text-text/20 font-bold text-xl">Legacy Platforms</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-border/5">
-          {[
-            [t.slide8.row1[0], t.slide8.row1[1], t.slide8.row1[2], "Static Data"],
-            [t.slide8.row2[0], t.slide8.row2[1], t.slide8.row2[2], "Manual Entry"],
-            [t.slide8.row3[0], t.slide8.row3[1], t.slide8.row3[2], "High Setup Fees"],
-            ["Scale", "Automated Global", "Limited / Local", "Siloed"],
-            ["Trust", "Audit-Ready (Immutable)", "Sample-based", "Inconsistent"]
-          ].map((row, i) => (
-            <motion.tr 
-              key={i} 
-              initial={{ opacity: 0, x: -10 }} 
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="hover:bg-text/5 transition-colors"
-            >
-              <td className="p-8 font-medium text-text/60">{row[0]}</td>
-              <td className="p-8"><span className="text-verdiq-accent font-bold">{row[1]}</span></td>
-              <td className="p-8 text-text/20">{row[2]}</td>
-              <td className="p-8 text-text/20">{row[3]}</td>
-            </motion.tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="overflow-hidden glass-card border-border/30">
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse min-w-[700px]">
+          <thead>
+            <tr className="bg-surface/50 border-b border-border/60">
+              <th className="p-4 md:p-6 text-text/40 font-mono text-[10px] uppercase tracking-wider">{t.slide8.col1}</th>
+              <th className="p-4 md:p-6 text-verdiq-accent font-bold text-base md:text-lg uppercase tracking-widest">{t.slide8.col2}</th>
+              <th className="p-4 md:p-6 text-text/20 font-bold text-base md:text-lg">{t.slide8.col3}</th>
+              <th className="p-4 md:p-6 text-text/20 font-bold text-base md:text-lg">Legacy</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-border/5">
+            {[
+              [t.slide8.row1[0], t.slide8.row1[1], t.slide8.row1[2], "Static Data"],
+              [t.slide8.row2[0], t.slide8.row2[1], t.slide8.row2[2], "Manual Entry"],
+              [t.slide8.row3[0], t.slide8.row3[1], t.slide8.row3[2], "High Fees"],
+              ["Scale", "Automated Global", "Limited / Local", "Siloed"]
+            ].map((row, i) => (
+              <motion.tr 
+                key={i} 
+                initial={{ opacity: 0, x: -10 }} 
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="hover:bg-text/5 transition-colors h-14"
+              >
+                <td className="p-4 md:p-6 font-medium text-text/60 text-sm md:text-base">{row[0]}</td>
+                <td className="p-4 md:p-6"><span className="text-verdiq-accent font-bold text-sm md:text-base">{row[1]}</span></td>
+                <td className="p-4 md:p-6 text-text/20 text-sm md:text-base">{row[2]}</td>
+                <td className="p-4 md:p-6 text-text/20 text-sm md:text-base">{row[3]}</td>
+              </motion.tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 );
 
 const SlideVision = ({ t, common }: { t: any, common: any }) => (
-  <div className="flex flex-col h-full justify-center items-center text-center p-8 md:p-24 relative">
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-verdiq-accent/5 rounded-full -z-10" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-verdiq-accent/10 rounded-full -z-10 animate-pulse" />
+  <div className="flex flex-col h-full justify-center items-center text-center p-8 md:p-24 relative overflow-hidden">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] border border-verdiq-accent/5 rounded-full -z-10" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] border border-verdiq-accent/10 rounded-full -z-10 animate-pulse" />
     
-    <motion.p className="text-verdiq-accent font-mono mb-4 text-sm uppercase tracking-widest">{common.vision}</motion.p>
+    <motion.p className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest leading-none">{common.vision}</motion.p>
     <motion.h2 
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      className="text-7xl md:text-8xl font-black mb-12 flex flex-col items-center gap-4 text-text"
+      className="text-6xl md:text-8xl font-black mb-10 flex flex-col items-center gap-2 md:gap-4 text-text leading-tight tracking-tight"
     >
       <span>Global ESG</span>
       <span className="text-verdiq-accent">Infrastructure</span>
     </motion.h2>
     
-    <div className="max-w-3xl glass-card p-12 border-verdiq-blue/20">
-      <ul className="text-2xl font-light space-y-8 text-text/80">
-        <li className="flex items-center justify-center gap-4 italic italic">
-          <Rocket className="text-verdiq-accent flex-shrink-0" size={24} />
+    <div className="max-w-3xl glass-card p-8 md:p-12 border-verdiq-blue/20">
+      <ul className="text-xl md:text-2xl font-light space-y-6 md:space-y-8 text-text/80 leading-relaxed">
+        <li className="flex items-center justify-center gap-4 italic">
+          <Rocket className="text-verdiq-accent shrink-0" size={22} />
           {t.slide9.item1}
         </li>
-        <li className="flex items-center justify-center gap-4 italic italic">
-          <Workflow className="text-verdiq-accent flex-shrink-0" size={24} />
+        <li className="flex items-center justify-center gap-4 italic">
+          <Workflow className="text-verdiq-accent shrink-0" size={22} />
           {t.slide9.item2}
         </li>
-        <li className="flex items-center justify-center gap-4 italic italic">
-          <Globe className="text-verdiq-accent flex-shrink-0" size={24} />
+        <li className="flex items-center justify-center gap-4 italic">
+          <Globe className="text-verdiq-accent shrink-0" size={22} />
           {t.slide9.item3}
         </li>
       </ul>
@@ -589,23 +590,74 @@ const SlideVision = ({ t, common }: { t: any, common: any }) => (
   </div>
 );
 
+const SlideManifesto = ({ t }: { t: any }) => (
+  <div className="flex flex-col h-full justify-center p-8 md:p-24 overflow-y-auto">
+    <div className="max-w-4xl mx-auto space-y-8">
+      {t.slideManifesto.manifesto.slice(0, 3).map((text: string, i: number) => (
+        <motion.p 
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.2 }}
+          className={`text-lg md:text-2xl lg:text-3xl font-bold tracking-tight leading-tight ${i === 2 ? 'text-verdiq-accent' : 'text-text'}`}
+        >
+          {text}
+        </motion.p>
+      ))}
+      
+      <div className="h-px w-16 bg-verdiq-accent/30" />
+      
+      <div className="space-y-4 md:space-y-5">
+        {t.slideManifesto.manifesto.slice(3, 6).map((text: string, i: number) => (
+          <motion.p 
+            key={i + 3}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6 + i * 0.1 }}
+            className="text-base md:text-lg lg:text-xl text-text/70 font-light leading-relaxed"
+          >
+            {text}
+          </motion.p>
+        ))}
+      </div>
+
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1 }}
+        className="glass-card p-6 md:p-8 border-verdiq-accent/20 bg-verdiq-accent/5"
+      >
+        <p className="text-md md:text-lg font-bold mb-3 text-verdiq-accent leading-tight uppercase tracking-wide">
+          {t.slideManifesto.manifesto[6]}
+        </p>
+        <div className="flex items-center gap-3">
+          <Logo size={28} />
+          <span className="text-xl md:text-2xl font-black tracking-tighter uppercase leading-none">
+            {t.slideManifesto.manifesto[7]}
+          </span>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+);
+
 const SlideVsGlobal = ({ t }: { t: any }) => (
-  <div className="flex flex-col h-full justify-center p-6 md:p-16">
-    <motion.p className="text-verdiq-blue font-mono mb-2 text-xs uppercase tracking-widest">
+  <div className="flex flex-col h-full justify-center p-6 md:p-12 lg:p-16 overflow-y-auto">
+    <motion.p className="text-verdiq-blue font-mono mb-2 text-xs uppercase tracking-widest leading-none">
       🌍 💼 MARKET COMPARISON
     </motion.p>
-    <motion.h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">
+    <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 md:mb-8 tracking-tight leading-tight">
       {t.slideVsGlobal.title}
     </motion.h2>
     
-    <div className="glass-card overflow-hidden border-border/40">
+    <div className="glass-card overflow-hidden border-border/40 shadow-xl">
       <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse min-w-[800px]">
+        <table className="w-full text-left border-collapse min-w-[900px]">
           <thead>
             <tr className="bg-surface/50 border-b border-border">
-              <th className="p-4 text-[10px] font-mono text-text/40 uppercase tracking-wider">{t.slideVsGlobal.headers[0]}</th>
+              <th className="p-5 text-[11px] font-mono text-text/40 uppercase tracking-wider">{t.slideVsGlobal.headers[0]}</th>
               {t.slideVsGlobal.headers.slice(1).map((header: string, i: number) => (
-                <th key={header + i} className="p-4 text-[10px] font-mono text-text/40 uppercase tracking-wider text-center border-l border-border/5">
+                <th key={header + i} className="p-5 text-[11px] font-mono text-text/40 uppercase tracking-wider text-center border-l border-border/5">
                   {header}
                 </th>
               ))}
@@ -618,17 +670,17 @@ const SlideVsGlobal = ({ t }: { t: any }) => (
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className={`transition-colors h-12 ${row.highlight ? 'bg-verdiq-accent/[0.08] relative group' : 'hover:bg-text/5'}`}
+                className={`transition-colors h-16 ${row.highlight ? 'bg-verdiq-accent/[0.12] relative group' : 'hover:bg-text/5'}`}
               >
-                <td className={`p-4 font-bold text-sm relative ${row.highlight ? 'text-verdiq-accent' : 'text-text/60'}`}>
+                <td className={`p-5 font-bold text-base relative ${row.highlight ? 'text-verdiq-accent' : 'text-text/60'}`}>
                   {row.highlight && (
-                    <div className="absolute inset-y-0 left-0 w-1 bg-verdiq-accent" />
+                    <div className="absolute inset-y-0 left-0 w-1.5 bg-verdiq-accent group-hover:w-2 transition-all" />
                   )}
                   {row.name}
                 </td>
                 {row.values.map((val: string, j: number) => (
-                  <td key={j} className="p-4 text-center border-l border-border/5">
-                    <span className={`text-lg ${val === '❌' ? 'opacity-20 translate-y-[1px] inline-block' : ''}`}>
+                  <td key={j} className="p-5 text-center border-l border-border/5">
+                    <span className={`text-xl ${val === '❌' ? 'opacity-20 translate-y-[1px] inline-block' : 'scale-110'}`}>
                       {val}
                     </span>
                   </td>
@@ -640,49 +692,49 @@ const SlideVsGlobal = ({ t }: { t: any }) => (
       </div>
     </div>
     
-    <div className="mt-8 flex gap-4 text-[10px] font-mono text-text/40 uppercase tracking-widest">
-      <div className="flex items-center gap-2"><span className="text-sm">✅</span> Optimized</div>
-      <div className="flex items-center gap-2"><span className="text-sm">⚠️</span> Limited / Partial</div>
-      <div className="flex items-center gap-2"><span className="text-sm">❌</span> Not Supported</div>
+    <div className="mt-8 flex flex-wrap gap-6 text-[11px] font-mono text-text/40 uppercase tracking-widest">
+      <div className="flex items-center gap-2"><span className="text-base">✅</span> Optimized</div>
+      <div className="flex items-center gap-2"><span className="text-base">⚠️</span> Limited / Partial</div>
+      <div className="flex items-center gap-2"><span className="text-base">❌</span> Not Supported</div>
     </div>
   </div>
 );
 
 const SlideFinancials = ({ t, common }: { t: any, common: any }) => (
   <div className="flex flex-col h-full justify-center p-8 md:p-24 overflow-y-auto">
-    <motion.p className="text-verdiq-accent font-mono mb-4 text-sm uppercase tracking-widest">{common.financials}</motion.p>
-    <motion.h2 className="text-5xl font-bold mb-12 text-text">{t.slideFinancials.title}</motion.h2>
+    <motion.p className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest leading-none">{common.financials}</motion.p>
+    <motion.h2 className="text-4xl md:text-5xl font-bold mb-10 text-text tracking-tight leading-tight">{t.slideFinancials.title}</motion.h2>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-      <div className="space-y-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-start">
+      <div className="space-y-6 md:space-y-8">
         <motion.div 
           initial={{ opacity: 0, x: -20 }} 
           whileInView={{ opacity: 1, x: 0 }}
-          className="glass-card p-8 border-verdiq-accent/20"
+          className="glass-card p-6 md:p-8 border-verdiq-accent/20"
         >
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-2xl font-bold">{t.slideFinancials.opex}</h3>
-            <span className="text-3xl font-black text-verdiq-accent">{t.slideFinancials.opexVal}</span>
+            <h3 className="text-xl md:text-2xl font-bold leading-none">{t.slideFinancials.opex}</h3>
+            <span className="text-2xl md:text-3xl font-black text-verdiq-accent leading-none">{t.slideFinancials.opexVal}</span>
           </div>
           <div className="space-y-4">
             <div className="flex gap-4 items-start">
-              <CheckCircle2 size={20} className="text-verdiq-accent shrink-0 mt-1" />
+              <CheckCircle2 size={18} className="text-verdiq-accent shrink-0 mt-1" />
               <div>
-                <p className="font-bold text-lg">{t.slideFinancials.team}</p>
-                <p className="text-text/50 text-sm">{t.slideFinancials.teamDetail}</p>
+                <p className="font-bold text-base md:text-lg leading-tight mb-1">{t.slideFinancials.team}</p>
+                <p className="text-text/50 text-xs md:text-sm leading-relaxed">{t.slideFinancials.teamDetail}</p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <CheckCircle2 size={20} className="text-verdiq-accent shrink-0 mt-1" />
+              <CheckCircle2 size={18} className="text-verdiq-accent shrink-0 mt-1" />
               <div>
-                <p className="font-bold text-lg">{t.slideFinancials.infra}</p>
-                <p className="text-text/50 text-sm">{t.slideFinancials.infraDetail}</p>
+                <p className="font-bold text-base md:text-lg leading-tight mb-1">{t.slideFinancials.infra}</p>
+                <p className="text-text/50 text-xs md:text-sm leading-relaxed">{t.slideFinancials.infraDetail}</p>
               </div>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-border flex justify-between items-center">
-            <span className="text-text/60 uppercase font-mono text-xs">{t.slideFinancials.annual}</span>
-            <span className="text-xl font-bold text-text">{t.slideFinancials.annualVal}</span>
+          <div className="mt-6 pt-5 border-t border-border/20 flex justify-between items-center">
+            <span className="text-text/40 uppercase font-mono text-[9px] tracking-widest">{t.slideFinancials.annual}</span>
+            <span className="text-lg font-bold text-text">{t.slideFinancials.annualVal}</span>
           </div>
         </motion.div>
 
@@ -752,32 +804,32 @@ const SlideFinancials = ({ t, common }: { t: any, common: any }) => (
 );
 
 const SlideClosing = ({ t, common }: { t: any, common: any }) => (
-  <div className="flex flex-col h-full justify-center p-8 md:p-24 text-center items-center">
+  <div className="flex flex-col h-full justify-center p-8 md:p-24 text-center items-center overflow-y-auto">
     <motion.div 
       initial={{ rotate: -180, opacity: 0 }}
       whileInView={{ rotate: 0, opacity: 1 }}
       transition={{ type: 'spring', damping: 10 }}
-      className="mb-12"
+      className="mb-8"
     >
-      <Logo size={128} className="mb-12" />
+      <Logo size={96} className="mb-0" />
     </motion.div>
     
-    <motion.h2 initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} className="text-6xl md:text-8xl text-text font-extrabold mb-8">{t.slide10.title}</motion.h2>
+    <motion.h2 initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} className="text-4xl md:text-6xl text-text font-extrabold mb-6 tracking-tight leading-tight">{t.slide10.title}</motion.h2>
     
     <motion.div 
       initial={{ y: 20, opacity: 0 }} 
       whileInView={{ y: 0, opacity: 1 }}
-      className="space-y-4 mb-20"
+      className="space-y-2 md:space-y-4 mb-12"
     >
-      <p className="text-3xl text-text/50 tracking-tight">{t.slide10.slogan}</p>
-      <p className="text-verdiq-accent font-mono text-xl uppercase tracking-widest">{t.slide10.ask}</p>
+      <p className="text-xl md:text-3xl text-text/50 tracking-tight leading-tight">{t.slide10.slogan}</p>
+      <p className="text-verdiq-accent font-mono text-lg md:text-xl uppercase tracking-widest leading-none">{t.slide10.ask}</p>
     </motion.div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-xl">
+ 
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 w-full max-w-lg">
       <motion.button 
         whileHover={{ scale: 1.02 }} 
         whileTap={{ scale: 0.98 }}
-        className="px-8 py-5 bg-verdiq-accent text-black font-bold text-xl rounded-2xl shadow-[0_0_40px_#00ff8844]"
+        className="px-6 py-4 md:px-8 md:py-5 bg-verdiq-accent text-black font-bold text-lg md:text-xl rounded-2xl shadow-[0_0_30px_#00ff8844] transition-shadow uppercase tracking-wide"
       >
         {common.whitepaper}
       </motion.button>
@@ -787,7 +839,7 @@ const SlideClosing = ({ t, common }: { t: any, common: any }) => (
         rel="noopener noreferrer"
         whileHover={{ scale: 1.02 }} 
         whileTap={{ scale: 0.98 }}
-        className="px-8 py-5 glass-card border-border text-text text-xl font-bold hover:bg-surface flex items-center justify-center transition-all"
+        className="px-6 py-4 md:px-8 md:py-5 glass-card border-border/40 text-text text-lg md:text-xl font-bold hover:bg-surface flex items-center justify-center transition-all uppercase tracking-wide"
       >
         {common.demo}
       </motion.a>
@@ -943,6 +995,7 @@ export default function App() {
     SlideComparison,
     SlideVision,
     SlideVsGlobal,
+    SlideManifesto,
     SlideFinancials,
     SlideClosing
   ];
