@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import logoPM from './logoPM.png';
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -32,43 +33,15 @@ import { translations, Language } from './translations';
 
 const Logo = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
   <div className={`inline-flex items-center justify-center ${className}`}>
-    <svg 
-      width={size} 
-      height={size} 
-      viewBox="0 0 100 100" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
+    <img
+      src={logoPM}
+      width={size}
+      height={size}
+      alt="LogoPM"
       role="img"
-      aria-label="Verdiq Logo"
-    >
-      <defs>
-        <linearGradient id="verdiq-logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-          <stop offset="0%" stopColor="#4ade80" />
-          <stop offset="100%" stopColor="#0ea5e9" />
-        </linearGradient>
-      </defs>
-      {/* The "V" Shape */}
-      <path 
-        d="M20 35 L45 85 L65 48" 
-        stroke="url(#verdiq-logo-gradient)" 
-        strokeWidth="14" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
-      />
-      {/* The Leaf Shape */}
-      <path 
-        d="M48 45 C48 25 75 15 85 30 C95 45 75 55 48 45Z" 
-        fill="url(#verdiq-logo-gradient)" 
-      />
-      {/* Leaf shadow/line */}
-      <path 
-        d="M55 42 C65 35 75 35 85 30" 
-        stroke="white" 
-        strokeWidth="1" 
-        strokeOpacity="0.4"
-        strokeLinecap="round"
-      />
-    </svg>
+      aria-label="LogoPM"
+      style={{ objectFit: 'contain' }}
+    />
   </div>
 );
 
@@ -225,9 +198,9 @@ const SlideProblem = ({ t, common }: { t: any, common: any }) => (
           </blockquote>
         </div>
         <div className="grid grid-cols-3 gap-4 mt-8">
-           <div className="h-1 bg-red-900/30 w-full" />
-           <div className="h-1 bg-red-900/30 w-full" />
-           <div className="h-1 bg-red-900/30 w-full" />
+          <div className="h-1 bg-red-900/30 w-full" />
+          <div className="h-1 bg-red-900/30 w-full" />
+          <div className="h-1 bg-red-900/30 w-full" />
         </div>
       </motion.div>
       <div className="absolute -top-12 -right-12 w-64 h-64 bg-red-500/5 blur-3xl -z-10" />
