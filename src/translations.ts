@@ -21,6 +21,7 @@ export const translations = {
       title: "Verdiq",
       subtitle: "AI-powered ESG Intelligence Platform",
       slogan: "“Turning Data Into Trust”",
+      description: "Transforming ESG data into real-time investment analytics. This is a new standard and a new infrastructure in Uzbekistan.",
       line: "Transforming ESG data into real-time investment intelligence"
     },
     slideFinancials: {
@@ -192,6 +193,7 @@ export const translations = {
       title: "Verdiq",
       subtitle: "AI asosidagi ESG intellekt platformasi",
       slogan: "“Ma'lumotlarni ishonchga aylantirish”",
+      description: "ESG ma'lumotlarini real vaqtda investitsion tahlillarga aylantirish. Bu yangi standart va O'zbekistondagi yangi infratuzilma",
       line: "ESG ma'lumotlarini real vaqt rejimida investitsiya tahliliga aylantirish"
     },
     slideFinancials: {
@@ -363,6 +365,7 @@ export const translations = {
       title: "Verdiq",
       subtitle: "Платформа ESG-аналитики на базе ИИ",
       slogan: "“Превращаем данные в доверие”",
+      description: "Преобразование данных ESG в инвестиционную аналитику в реальном времени. Это новый стандарт и новая инфраструктура в Узбекистане.",
       line: "Трансформация данных ESG в инвестиционную аналитику в реальном времени"
     },
     slideFinancials: {

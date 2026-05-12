@@ -172,10 +172,17 @@ const SlideCover = ({ t, common }: { t: any, common: any }) => (
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.4 }}
-      className="max-w-2xl px-6 py-4 glass-card border-verdiq-accent/20"
+      className="max-w-3xl px-8 py-8 glass-card border-verdiq-accent/20"
     >
-      <p className="text-text/60 text-lg italic">{t.slide1.slogan}</p>
-      <p className="text-text/80 mt-2 font-light">{t.slide1.line}</p>
+      <p className="text-text/60 text-xl md:text-2xl italic mb-6">{t.slide1.slogan}</p>
+      
+      <p className="text-lg md:text-xl text-text/90 font-medium leading-relaxed mb-6">
+        {t.slide1.description}
+      </p>
+      
+      <div className="w-16 h-px bg-verdiq-accent/30 mx-auto mb-4" />
+      
+      <p className="text-text/40 font-mono text-[10px] uppercase tracking-[0.3em]">{t.slide1.line}</p>
     </motion.div>
   </div>
 );
