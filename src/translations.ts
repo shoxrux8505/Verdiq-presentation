@@ -71,13 +71,67 @@ export const translations = {
       item5Detail: "Compare performance vs industry peers instantly."
     },
     slide5: {
-      title: "Three Steps to Total Intelligence",
-      step1: "Ingestion",
-      step1Detail: "Connect ERP, HR, Finance, and Supply Chain systems via API.",
-      step2: "AI Processing",
-      step2Detail: "Auto-mapping & real-time risk standardization.",
-      step3: "Intelligence",
-      step3Detail: "Scores, recommendations, and investor-ready reports."
+      title: "Verdiq: From Data to Investment Insights",
+      steps: [
+        { 
+          title: "STEP 1 — DATA COLLECTION", 
+          desc: "Gathering company data: questionnaires, documents, and public info.",
+          why: "Turning chaos into structured data.",
+          icon: "database"
+        },
+        { 
+          title: "STEP 2 — NORMALIZATION", 
+          desc: "System cleans and standardizes: HR policies, energy, and governance.",
+          why: "All companies become comparable.",
+          icon: "workflow"
+        },
+        { 
+          title: "STEP 3 — SCORING ENGINE", 
+          desc: "Real-time ESG scoring: calculates readiness across global frameworks.",
+          why: "Evaluates E, S, G, and data trust.",
+          icon: "zap"
+        },
+        { 
+          title: "STEP 4 — AI ANALYSIS", 
+          desc: "AI identifies weaknesses, explains risks, and provides benchmarks.",
+          example: "Weak governance increases operational risk.",
+          icon: "cpu"
+        },
+        { 
+          title: "STEP 5 — INVESTMENT READINESS", 
+          desc: "Verdiq transforms ESG into alpha insights for investors.",
+          readiness: "Medium Risk | Improve governance",
+          icon: "shield"
+        },
+        { 
+          title: "STEP 6 — REPORT GENERATION", 
+          desc: "Generates investor-ready reports, risks, and action plans.",
+          icon: "fileText"
+        },
+        { 
+          title: "STEP 7 — CONTINUOUS PROGRESS", 
+          desc: "Monitors history, tracks progress, and updates scores live.",
+          icon: "trendingUp"
+        }
+      ],
+      logicTitle: "LOGIC",
+      logic: ["Raw Data", "ESG Analysis", "AI Insights", "Investment Ready"],
+      problemTitle: "THE REAL PROBLEM WE SOLVE",
+      forInvestors: "Investors: Less uncertainty.",
+      forCompanies: "Companies: Clear path to capital.",
+      onePhrase: "Verdiq transforms raw data into structured investment intelligence."
+    },
+    slideVsGlobal: {
+      title: "Verdiq vs Global ESG Platforms",
+      headers: ["Platform", "Corp", "SMB", "AI", "Dirty Data", "Reports", "Ready", "Emerging", "Real-time"],
+      rows: [
+        { name: "MSCI", values: ["✅", "❌", "❌", "❌", "✅", "⚠️", "❌", "❌"] },
+        { name: "Sustainalytics", values: ["✅", "❌", "❌", "❌", "✅", "⚠️", "❌", "❌"] },
+        { name: "Morningstar", values: ["✅", "❌", "⚠️", "❌", "✅", "⚠️", "❌", "❌"] },
+        { name: "Datamaran", values: ["✅", "❌", "✅", "❌", "✅", "❌", "❌", "⚠️"] },
+        { name: "Workiva", values: ["✅", "❌", "⚠️", "❌", "✅", "❌", "❌", "❌"] },
+        { name: "Verdiq", values: ["⚠️", "✅", "✅", "✅", "✅", "✅", "✅", "✅"], highlight: true }
+      ]
     },
     slide6: {
       title: "The Global ESG Mandate",
@@ -188,13 +242,67 @@ export const translations = {
       item5Detail: "Ish faoliyatini soha raqobatchilari bilan solishtiring."
     },
     slide5: {
-      title: "To'liq intellekt sari uch qadam",
-      step1: "Ma'lumot olish",
-      step1Detail: "ERP, HR, Moliya va ta'minot tizimlarini API orqali ulash.",
-      step2: "AI tahlili",
-      step2Detail: "Avto-xaritalash va real vaqtda xavfni standartlashtirish.",
-      step3: "Intellekt",
-      step3Detail: "Ballar, tavsiyalar va investorlar uchun tayyor hisobotlar."
+      title: "Verdiq qanday ishlaydi: Ma'lumotdan intellektga",
+      steps: [
+        { 
+          title: "1-BOSQICH — DATA COLLECTION", 
+          desc: "Kompaniya ma'lumotlarini yig'ish: anketalar, hujjatlar va ochiq ma'lumotlar.",
+          why: "Xaotik ma'lumotlar strukturaga aylanadi.",
+          icon: "database"
+        },
+        { 
+          title: "2-BOSQICH — NORMALIZATION", 
+          desc: "Tizim ma'lumotlarni tozalaydi va standartlashtiradi (HR, energiya, boshqaruv).",
+          why: "Kompaniyalar bir-biri bilan taqqoslanadi.",
+          icon: "workflow"
+        },
+        { 
+          title: "3-BOSQICH — SCORING ENGINE", 
+          desc: "Real vaqtda ESG skorini hisoblash: global standartlar bo'yicha tayyorgarlik.",
+          why: "E, S, G va ma'lumotlar ishonchini baholaydi.",
+          icon: "zap"
+        },
+        { 
+          title: "4-BOSQICH — AI ANALYSIS", 
+          desc: "AI zaif tomonlarni topadi, xavflarni tushuntiradi va tavsiyalar beradi.",
+          example: "Weak governance increases operational risk.",
+          icon: "cpu"
+        },
+        { 
+          title: "5-BOSQICH — INVESTMENT READINESS", 
+          desc: "Verdiq ESGni investitsion insightga va tayyorgarlikka aylantiradi.",
+          readiness: "O'rtacha xavf | Yaxshilash talab etiladi",
+          icon: "shield"
+        },
+        { 
+          title: "6-BOSQICH — REPORT GENERATION", 
+          desc: "Tayyor hisobotlar, xavflar va harakat rejalarini yaratadi.",
+          icon: "fileText"
+        },
+        { 
+          title: "7-BOSQICH — CONTINUOUS PROGRESS", 
+          desc: "Progressni kuzatadi, tarixni saqlaydi va ballarni yangilab boradi.",
+          icon: "trendingUp"
+        }
+      ],
+      logicTitle: "LOGIKA",
+      logic: ["Xom ma'lumotlar", "ESG tahlili", "AI insightlar", "Investitsion tayyor"],
+      problemTitle: "BIZ HAL QILADIGAN MUAMMO",
+      forInvestors: "Investorlarga: Kamroq noaniqlik.",
+      forCompanies: "Kompaniyalarga: Kapitalga aniq yo'l.",
+      onePhrase: "Verdiq xom ma'lumotlarni strukturaviy investitsiya intellektiga aylantiradi."
+    },
+    slideVsGlobal: {
+      title: "Verdiq vs Global ESG Platformalar",
+      headers: ["Platforma", "Korp", "Startap/SMB", "AI Tahlili", "To'liq emas", "Hisobotlar", "Tayyor", "Rivoj", "Real-time"],
+      rows: [
+        { name: "MSCI", values: ["✅", "❌", "❌", "❌", "✅", "⚠️", "❌", "❌"] },
+        { name: "Sustainalytics", values: ["✅", "❌", "❌", "❌", "✅", "⚠️", "❌", "❌"] },
+        { name: "Morningstar", values: ["✅", "❌", "⚠️", "❌", "✅", "⚠️", "❌", "❌"] },
+        { name: "Datamaran", values: ["✅", "❌", "✅", "❌", "✅", "❌", "❌", "⚠️"] },
+        { name: "Workiva", values: ["✅", "❌", "⚠️", "❌", "✅", "❌", "❌", "❌"] },
+        { name: "Verdiq", values: ["⚠️", "✅", "✅", "✅", "✅", "✅", "✅", "✅"], highlight: true }
+      ]
     },
     slide6: {
       title: "Global ESG talablari",
@@ -305,13 +413,67 @@ export const translations = {
       item5Detail: "Сравнение производительности с конкурентами по отрасли."
     },
     slide5: {
-      title: "Три шага к полному интеллекту",
-      step1: "Сбор данных",
-      step1Detail: "Подключение систем ERP, HR, финансов через API.",
-      step2: "ИИ-анализ",
-      step2Detail: "Авто-картирование и стандартизация рисков.",
-      step3: "Интеллект",
-      step3Detail: "Баллы, рекомендации и отчеты для инвесторов."
+      title: "Как работает Verdiq: от данных к инсайтам",
+      steps: [
+        { 
+          title: "ЭТАП 1 — DATA COLLECTION", 
+          desc: "Сбор данных: анкеты, документы, публичные данные компании.",
+          why: "Хаос становится структурой.",
+          icon: "database"
+        },
+        { 
+          title: "ЭТАП 2 — NORMALIZATION", 
+          desc: "Очистка и стандартизация: политики HR, энергопотребление, управление.",
+          why: "Компании становятся сравнимыми.",
+          icon: "workflow"
+        },
+        { 
+          title: "ЭТАП 3 — SCORING ENGINE", 
+          desc: "Расчет ESG Readiness Score по матричной формуле в реальном времени.",
+          why: "Оценка E, S, G и доверия к данным.",
+          icon: "zap"
+        },
+        { 
+          title: "ЭТАП 4 — AI ANALYSIS", 
+          desc: "ИИ находит слабые места, объясняет риски и дает рекомендации.",
+          example: "Weak governance increases operational risk.",
+          icon: "cpu"
+        },
+        { 
+          title: "ЭТАП 5 — INVESTMENT READINESS", 
+          desc: "Трансформация ESG в инвестиционный инсайт и определение готовности.",
+          readiness: "Medium Risk | Improve governance",
+          icon: "shield"
+        },
+        { 
+          title: "ЭТАП 6 — REPORT GENERATION", 
+          desc: "Генерация отчетов: баллы, риски и план конкретных действий.",
+          icon: "fileText"
+        },
+        { 
+          title: "ЭТАП 7 — CONTINUOUS PROGRESS", 
+          desc: "Мониторинг прогресса, история изменений и пересчет скоринга.",
+          icon: "trendingUp"
+        }
+      ],
+      logicTitle: "ЛОГИКА",
+      logic: ["Raw Data", "ESG Analysis", "AI Insights", "Investment Ready"],
+      problemTitle: "РЕШАЕМАЯ ПРОБЛЕМА",
+      forInvestors: "Инвесторам: Меньше рисков.",
+      forCompanies: "Компаниям: Путь к капиталу.",
+      onePhrase: "Verdiq превращает сырые данные в инвестиционный интеллект."
+    },
+    slideVsGlobal: {
+      title: "Verdiq vs Global ESG Platforms",
+      headers: ["Платформа", "Корп", "Стартап/МСБ", "ИИ Анализ", "Грязные данные", "ESG Отчеты", "Готовность", "Рынки", "Real-time"],
+      rows: [
+        { name: "MSCI", values: ["✅", "❌", "❌", "❌", "✅", "⚠️", "❌", "❌"] },
+        { name: "Sustainalytics", values: ["✅", "❌", "❌", "❌", "✅", "⚠️", "❌", "❌"] },
+        { name: "Morningstar", values: ["✅", "❌", "⚠️", "❌", "✅", "⚠️", "❌", "❌"] },
+        { name: "Datamaran", values: ["✅", "❌", "✅", "❌", "✅", "❌", "❌", "⚠️"] },
+        { name: "Workiva", values: ["✅", "❌", "⚠️", "❌", "✅", "❌", "❌", "❌"] },
+        { name: "Verdiq", values: ["⚠️", "✅", "✅", "✅", "✅", "✅", "✅", "✅"], highlight: true }
+      ]
     },
     slide6: {
       title: "Глобальный мандат ESG",

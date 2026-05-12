@@ -5,7 +5,6 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import logoPM from './logoPM.png';
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -33,15 +32,43 @@ import { translations, Language } from './translations';
 
 const Logo = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
   <div className={`inline-flex items-center justify-center ${className}`}>
-    <img
-      src={logoPM}
-      width={size}
-      height={size}
-      alt="LogoPM"
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 100 100" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="LogoPM"
-      style={{ objectFit: 'contain' }}
-    />
+      aria-label="Verdiq Logo"
+    >
+      <defs>
+        <linearGradient id="verdiq-logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+          <stop offset="0%" stopColor="#4ade80" />
+          <stop offset="100%" stopColor="#0ea5e9" />
+        </linearGradient>
+      </defs>
+      {/* The "V" Shape */}
+      <path 
+        d="M20 35 L45 85 L65 48" 
+        stroke="url(#verdiq-logo-gradient)" 
+        strokeWidth="14" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+      />
+      {/* The Leaf Shape */}
+      <path 
+        d="M48 45 C48 25 75 15 85 30 C95 45 75 55 48 45Z" 
+        fill="url(#verdiq-logo-gradient)" 
+      />
+      {/* Leaf shadow/line */}
+      <path 
+        d="M55 42 C65 35 75 35 85 30" 
+        stroke="white" 
+        strokeWidth="1" 
+        strokeOpacity="0.4"
+        strokeLinecap="round"
+      />
+    </svg>
   </div>
 );
 
@@ -198,9 +225,9 @@ const SlideProblem = ({ t, common }: { t: any, common: any }) => (
           </blockquote>
         </div>
         <div className="grid grid-cols-3 gap-4 mt-8">
-          <div className="h-1 bg-red-900/30 w-full" />
-          <div className="h-1 bg-red-900/30 w-full" />
-          <div className="h-1 bg-red-900/30 w-full" />
+           <div className="h-1 bg-red-900/30 w-full" />
+           <div className="h-1 bg-red-900/30 w-full" />
+           <div className="h-1 bg-red-900/30 w-full" />
         </div>
       </motion.div>
       <div className="absolute -top-12 -right-12 w-64 h-64 bg-red-500/5 blur-3xl -z-10" />
@@ -319,47 +346,100 @@ const SlideProduct = ({ t, common }: { t: any, common: any }) => (
   </div>
 );
 
-const SlideHowItWorks = ({ t, common }: { t: any, common: any }) => (
-  <div className="flex flex-col h-full justify-center items-center text-center p-8 md:p-24">
-    <motion.p className="text-verdiq-accent font-mono mb-4 text-sm">05. {common.howItWorks}</motion.p>
-    <motion.h2 className="text-5xl font-bold mb-20 tracking-tight">{t.slide5.title}</motion.h2>
-    
-    <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl w-full">
-      <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} className="flex-1">
-        <div className="w-20 h-20 bg-verdiq-blue/10 border border-verdiq-blue/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <Database size={32} className="text-verdiq-blue" />
-        </div>
-        <h3 className="text-2xl font-bold mb-4">{t.slide5.step1}</h3>
-        <p className="text-text/40">{t.slide5.step1Detail}</p>
-      </motion.div>
+const SlideHowItWorks = ({ t, common }: { t: any, common: any }) => {
+  const iconMap: Record<string, any> = {
+    database: Database,
+    workflow: Workflow,
+    zap: Zap,
+    cpu: Cpu,
+    shield: ShieldCheck,
+    fileText: FileText,
+    trendingUp: TrendingUp
+  };
+
+  return (
+    <div className="flex flex-col h-full justify-center p-6 md:p-16 overflow-y-auto">
+      <motion.p className="text-verdiq-accent font-mono mb-2 text-xs uppercase tracking-widest">
+        05. {common.howItWorks}
+      </motion.p>
+      <motion.h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">
+        {t.slide5.title}
+      </motion.h2>
       
-      <div className="h-px bg-text/10 w-12 hidden md:block" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+        {t.slide5.steps.map((step: any, i: number) => {
+          const Icon = iconMap[step.icon] || Database;
+          return (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              className={`glass-card p-4 border-verdiq-accent/10 hover:border-verdiq-accent/40 transition-all ${i === 6 ? 'lg:col-span-2' : ''}`}
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2 bg-verdiq-accent/10 border border-verdiq-accent/20 rounded-lg">
+                  <Icon size={16} className="text-verdiq-accent" />
+                </div>
+                <span className="text-[9px] font-mono text-verdiq-accent/60 uppercase">{step.title.split(' — ')[0]}</span>
+              </div>
+              <h3 className="text-md font-bold mb-1 leading-tight uppercase">{step.title.split(' — ')[1] || step.title}</h3>
+              <p className="text-text/50 text-[13px] mb-2 leading-relaxed">{step.desc}</p>
+              
+              {step.why && (
+                <div className="mt-auto pt-2 border-t border-border/10">
+                  <p className="text-[10px] text-verdiq-accent font-medium leading-tight">
+                    <span className="opacity-40 uppercase">Why:</span> {step.why}
+                  </p>
+                </div>
+              )}
+              {step.example && (
+                <div className="mt-auto pt-2 border-t border-border/10">
+                  <p className="text-[10px] text-verdiq-blue font-medium leading-tight">
+                    <span className="opacity-40 uppercase">Eg:</span> {step.example}
+                  </p>
+                </div>
+              )}
+              {step.readiness && (
+                <div className="mt-auto pt-2 border-t border-border/20 bg-verdiq-accent/5 -mx-4 -mb-4 p-3 px-4 rounded-b-2xl">
+                  <p className="text-[9px] text-text/80 font-bold uppercase tracking-widest mb-1">Status</p>
+                  <p className="text-[11px] text-verdiq-accent font-mono">{step.readiness}</p>
+                </div>
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
 
-      <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="flex-1 scale-110">
-        <div className="w-24 h-24 bg-verdiq-accent/10 border border-verdiq-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 relative">
-          <Cpu size={40} className="text-verdiq-accent" />
-          <motion.div 
-            animate={{ rotate: 360 }}
-            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-            className="absolute inset-0 border border-dashed border-verdiq-accent/30 rounded-full" 
-          />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center bg-surface/40 p-6 rounded-2xl border border-border">
+        <div className="lg:col-span-2">
+          <p className="text-[10px] font-mono text-text/40 uppercase tracking-[0.3em] mb-4">{t.slide5.logicTitle}</p>
+          <div className="flex flex-wrap lg:flex-nowrap items-center gap-3">
+            {t.slide5.logic.map((item: string, i: number) => (
+              <React.Fragment key={i}>
+                <div className="px-3 py-1.5 bg-verdiq-accent/5 border border-verdiq-accent/20 rounded-lg text-[13px] font-bold text-verdiq-accent whitespace-nowrap">
+                  {item}
+                </div>
+                {i < t.slide5.logic.length - 1 && (
+                  <ChevronRight size={14} className="text-border hidden lg:block" />
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
-        <h3 className="text-2xl font-bold mb-4">{t.slide5.step2}</h3>
-        <p className="text-text/60 font-medium">{t.slide5.step2Detail}</p>
-      </motion.div>
-
-      <div className="h-px bg-text/10 w-12 hidden md:block" />
-
-      <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="flex-1">
-        <div className="w-20 h-20 bg-verdiq-accent/10 border border-verdiq-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <Layers size={32} className="text-verdiq-accent" />
+        <div className="lg:border-l lg:border-border lg:pl-6">
+          <p className="text-[13px] font-bold italic text-text/80 mb-2 leading-tight">
+            &quot;{t.slide5.onePhrase}&quot;
+          </p>
+          <div className="flex flex-col gap-0.5">
+            <p className="text-[9px] text-verdiq-accent font-mono uppercase tracking-widest leading-none">{t.slide5.forInvestors}</p>
+            <p className="text-[9px] text-verdiq-blue font-mono uppercase tracking-widest leading-none">{t.slide5.forCompanies}</p>
+          </div>
         </div>
-        <h3 className="text-2xl font-bold mb-4">{t.slide5.step3}</h3>
-        <p className="text-text/40">{t.slide5.step3Detail}</p>
-      </motion.div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const SlideMarket = ({ t, common }: { t: any, common: any }) => (
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 h-full items-center p-8 md:p-24">
@@ -498,6 +578,65 @@ const SlideVision = ({ t, common }: { t: any, common: any }) => (
           {t.slide9.item3}
         </li>
       </ul>
+    </div>
+  </div>
+);
+
+const SlideVsGlobal = ({ t }: { t: any }) => (
+  <div className="flex flex-col h-full justify-center p-6 md:p-16">
+    <motion.p className="text-verdiq-blue font-mono mb-2 text-xs uppercase tracking-widest">
+      🌍 💼 MARKET COMPARISON
+    </motion.p>
+    <motion.h2 className="text-3xl md:text-4xl font-bold mb-8 tracking-tight">
+      {t.slideVsGlobal.title}
+    </motion.h2>
+    
+    <div className="glass-card overflow-hidden border-border/40">
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse min-w-[800px]">
+          <thead>
+            <tr className="bg-surface/50 border-b border-border">
+              <th className="p-4 text-[10px] font-mono text-text/40 uppercase tracking-wider">{t.slideVsGlobal.headers[0]}</th>
+              {t.slideVsGlobal.headers.slice(1).map((header: string, i: number) => (
+                <th key={header + i} className="p-4 text-[10px] font-mono text-text/40 uppercase tracking-wider text-center border-l border-border/5">
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-border/5">
+            {t.slideVsGlobal.rows.map((row: any, i: number) => (
+              <motion.tr 
+                key={row.name + i} 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                className={`transition-colors h-12 ${row.highlight ? 'bg-verdiq-accent/[0.08] relative group' : 'hover:bg-text/5'}`}
+              >
+                <td className={`p-4 font-bold text-sm relative ${row.highlight ? 'text-verdiq-accent' : 'text-text/60'}`}>
+                  {row.highlight && (
+                    <div className="absolute inset-y-0 left-0 w-1 bg-verdiq-accent" />
+                  )}
+                  {row.name}
+                </td>
+                {row.values.map((val: string, j: number) => (
+                  <td key={j} className="p-4 text-center border-l border-border/5">
+                    <span className={`text-lg ${val === '❌' ? 'opacity-20 translate-y-[1px] inline-block' : ''}`}>
+                      {val}
+                    </span>
+                  </td>
+                ))}
+              </motion.tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div className="mt-8 flex gap-4 text-[10px] font-mono text-text/40 uppercase tracking-widest">
+      <div className="flex items-center gap-2"><span className="text-sm">✅</span> Optimized</div>
+      <div className="flex items-center gap-2"><span className="text-sm">⚠️</span> Limited / Partial</div>
+      <div className="flex items-center gap-2"><span className="text-sm">❌</span> Not Supported</div>
     </div>
   </div>
 );
@@ -651,6 +790,119 @@ const SlideClosing = ({ t, common }: { t: any, common: any }) => (
   </div>
 );
 
+// --- Background Effects ---
+
+const BackgroundEffects = () => {
+  const nodes = useMemo(() => Array.from({ length: 15 }).map((_, i) => ({
+    id: i,
+    size: Math.random() * 4 + 2,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    duration: Math.random() * 10 + 10,
+    delay: Math.random() * 5
+  })), []);
+
+  return (
+    <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+      {/* Base Noise Layer */}
+      <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay" />
+      
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-grid opacity-[0.15]" />
+      
+      {/* Gradient Blobs */}
+      <motion.div 
+        animate={{ 
+          x: [0, 100, 0], 
+          y: [0, 50, 0],
+          scale: [1, 1.1, 1]
+        }}
+        transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+        className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-verdiq-blue/10 blur-[130px] rounded-full" 
+      />
+      <motion.div 
+        animate={{ 
+          x: [0, -100, 0], 
+          y: [0, -50, 0],
+          scale: [1, 1.2, 1]
+        }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+        className="absolute -bottom-[10%] -right-[10%] w-[50%] h-[50%] bg-verdiq-accent/10 blur-[130px] rounded-full" 
+      />
+
+      {/* Center Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-verdiq-accent/[0.02] blur-[150px] rounded-full" />
+
+      {/* Floating Data Nodes */}
+      {nodes.map((node) => (
+        <motion.div
+          key={node.id}
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: [0.1, 0.4, 0.1],
+            y: ['0%', '-20%', '0%'],
+            x: ['0%', '10%', '0%']
+          }}
+          transition={{
+            duration: node.duration,
+            repeat: Infinity,
+            delay: node.delay,
+            ease: "easeInOut"
+          }}
+          style={{
+            position: 'absolute',
+            left: `${node.x}%`,
+            top: `${node.y}%`,
+            width: node.size,
+            height: node.size,
+            borderRadius: '50%',
+            backgroundColor: node.id % 2 === 0 ? 'var(--verdiq-accent)' : 'var(--verdiq-blue)',
+            boxShadow: `0 0 10px ${node.id % 2 === 0 ? 'var(--verdiq-accent)' : 'var(--verdiq-blue)'}`
+          }}
+        />
+      ))}
+
+      {/* Abstract Vector Lines */}
+      <svg className="absolute inset-0 w-full h-full opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="var(--verdiq-accent)" />
+            <stop offset="100%" stopColor="var(--verdiq-blue)" />
+          </linearGradient>
+        </defs>
+        <motion.path
+          d="M-100,200 C200,100 400,300 800,150 S1200,400 1600,200"
+          stroke="url(#line-grad)"
+          strokeWidth="2"
+          fill="none"
+          animate={{ 
+            d: [
+              "M-100,200 C200,100 400,300 800,150 S1200,400 1600,200",
+              "M-100,250 C250,150 450,350 850,200 S1250,450 1600,250",
+              "M-100,200 C200,100 400,300 800,150 S1200,400 1600,200"
+            ]
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.path
+          d="M-200,600 C300,500 500,700 900,550 S1300,800 1700,600"
+          stroke="url(#line-grad)"
+          strokeWidth="1"
+          fill="none"
+          animate={{ 
+            d: [
+              "M-200,600 C300,500 500,700 900,550 S1300,800 1700,600",
+              "M-200,650 C350,550 550,750 950,600 S1350,850 1700,650",
+              "M-200,600 C300,500 500,700 900,550 S1300,800 1700,600"
+            ]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </svg>
+    </div>
+  );
+};
+
 // --- Main Application ---
 
 export default function App() {
@@ -683,6 +935,7 @@ export default function App() {
     SlideBusinessModel,
     SlideComparison,
     SlideVision,
+    SlideVsGlobal,
     SlideFinancials,
     SlideClosing
   ];
@@ -716,19 +969,7 @@ export default function App() {
         toggleTheme={toggleTheme} 
       />
       
-      {/* Background Ambience */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-        <motion.div 
-          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-          className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-verdiq-blue/5 blur-[120px] rounded-full" 
-        />
-        <motion.div 
-          animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-          className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-verdiq-accent/5 blur-[120px] rounded-full" 
-        />
-      </div>
+      <BackgroundEffects />
 
       <AnimatePresence mode="wait">
         <motion.div
